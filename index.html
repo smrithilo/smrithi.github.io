@@ -142,6 +142,24 @@
 
     .home-intro p:last-child { margin-bottom: 0; }
 
+    .inline-link {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: inherit;
+      color: var(--accent);
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--line);
+      transition: text-decoration-color 0.2s;
+    }
+
+    .inline-link:hover {
+      text-decoration-color: var(--accent);
+    }
+
     /* ── SECTION UTILS ── */
     .section-label {
       font-family: 'DM Mono', monospace;
@@ -484,6 +502,196 @@
       flex-shrink: 0;
     }
 
+    /* ── MISC / RANDOM STUFF ── */
+    .misc-intro {
+      font-size: 1rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 2.4rem;
+      max-width: 520px;
+    }
+
+    .misc-section {
+      margin-bottom: 3.2rem;
+    }
+
+    .misc-section-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .misc-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    /* photo grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .photo-slot {
+      aspect-ratio: 4/3;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-slot .photo-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-align: center;
+      padding: 0 0.5rem;
+    }
+
+    .photo-slot .photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26,26,24,0.65);
+      color: #f7f5f0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      padding: 0.35rem 0.6rem;
+      letter-spacing: 0.04em;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .photo-slot:hover .photo-caption { opacity: 1; }
+
+    /* travel countries */
+    .travel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .travel-card {
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--card);
+    }
+
+    .travel-img {
+      aspect-ratio: 3/2;
+      background: var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .travel-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .travel-img .placeholder-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .travel-info {
+      padding: 0.7rem 0.9rem 0.8rem;
+    }
+
+    .travel-country {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .travel-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 0.15rem;
+    }
+
+    /* paintings — portrait aspect */
+    .paintings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .painting-slot {
+      aspect-ratio: 3/4;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .painting-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .painting-slot .photo-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 0 0.5rem;
+    }
+
+    .painting-slot .photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(26,26,24,0.65);
+      color: #f7f5f0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      padding: 0.35rem 0.6rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .painting-slot:hover .photo-caption { opacity: 1; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 560px) {
       header h1 { font-size: 1.9rem; }
@@ -523,6 +731,7 @@
   <button onclick="switchTab('projects', this)">Projects</button>
   <button onclick="switchTab('skills', this)">Skills</button>
   <button onclick="switchTab('volunteering', this)">Volunteering</button>
+  <button onclick="switchTab('misc', this)">& more</button>
 </nav>
 
 <main>
@@ -534,7 +743,7 @@
       <p>I'm a robotics engineer and researcher currently pursuing my Master's at the University of Pennsylvania. I work at the intersection of motion planning, manipulation, and multi-agent systems — building robots that can reason about space, construct things, and move with intention.</p>
       <p>Before Penn, I spent time at CMU's Biorobotics Lab thinking about collective construction in zero gravity, at IISc exploring how soft robots transmit force, and at DRDO characterizing materials for rocket motor casings. In between, I co-captained a team that built a radio-controlled aircraft and flew it to a top-26 international finish.</p>
       <p>I care about making robotics research more accessible — I've taught Scratch to K–8 kids, designed aircraft design courses for freshmen, and maintained open repositories for mechanical engineering students.</p>
-      <p>Outside research, I keep a Pinterest as a digital diary, and I'm always looking for the next interesting problem.</p>
+      <p>Outside research, I keep a Pinterest as a digital diary, and I'm always looking for the next interesting problem. I also shoot on film and digital, paint, fly RC planes, and travel when I can — <button class="inline-link" onclick="switchTab('misc', document.querySelector('nav button:last-child'))">some of that lives here →</button></p>
     </div>
   </section>
 
@@ -839,6 +1048,162 @@
       </div>
       <div class="vol-date">Feb 2023 – May 2024</div>
     </div>
+  </section>
+
+  <!-- ── MISC ── -->
+  <section class="tab-panel" id="tab-misc">
+    <p class="section-label">& more</p>
+    <p class="misc-intro">random stuff i do that makes me happy</p>
+
+    <!-- PHOTOGRAPHY -->
+    <div class="misc-section">
+      <div class="misc-section-title">Photography — analog & digital</div>
+      <p class="misc-text">Add your photos below. For each one: replace the placeholder div with an &lt;img&gt; tag pointing to your image file, and fill in the caption.</p>
+      <!--
+        HOW TO ADD A PHOTO:
+        1. Upload your image to the repo (e.g. photos/film-001.jpg)
+        2. Replace the placeholder div with: <img src="photos/film-001.jpg" alt="description">
+        3. Update the .photo-caption text
+        To add more: copy a .photo-slot block.
+        To remove: delete a .photo-slot block.
+      -->
+      <div class="photo-grid">
+
+        <div class="photo-slot">
+          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img.jpg</div>
+          <div class="photo-caption">caption here</div>
+        </div>
+
+        <div class="photo-slot">
+          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img.jpg</div>
+          <div class="photo-caption">caption here</div>
+        </div>
+
+        <div class="photo-slot">
+          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img.jpg</div>
+          <div class="photo-caption">caption here</div>
+        </div>
+
+        <div class="photo-slot">
+          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img.jpg</div>
+          <div class="photo-caption">caption here</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RC PLANES -->
+    <div class="misc-section">
+      <div class="misc-section-title">RC Planes</div>
+      <p class="misc-text">
+        I've been flying RC planes since my time captaining Team Pegasus. There's something about hand-launching something you built and watching it hold its own in the air. I fly fixed-wing mostly — I like the physics of it.
+        <!-- Edit this text to say whatever you want about your RC flying. -->
+      </p>
+      <!--
+        Optionally add photos the same way as the photography section above.
+      -->
+      <div class="photo-grid" style="margin-top:1rem;">
+
+        <div class="photo-slot">
+          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/rc.jpg</div>
+          <div class="photo-caption">caption here</div>
+        </div>
+
+        <div class="photo-slot">
+          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/rc.jpg</div>
+          <div class="photo-caption">caption here</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PAINTINGS -->
+    <div class="misc-section">
+      <div class="misc-section-title">Paintings</div>
+      <p class="misc-text">
+        <!-- Write a line or two about your painting practice — medium, when you started, what you like to paint. -->
+        Edit this to describe your painting practice.
+      </p>
+      <!--
+        HOW TO ADD A PAINTING:
+        Same as photos — upload to repo, replace placeholder with <img src="...">, update caption.
+      -->
+      <div class="paintings-grid">
+
+        <div class="painting-slot">
+          <div class="photo-label">add painting<br>photos/painting.jpg</div>
+          <div class="photo-caption">title / medium / year</div>
+        </div>
+
+        <div class="painting-slot">
+          <div class="photo-label">add painting<br>photos/painting.jpg</div>
+          <div class="photo-caption">title / medium / year</div>
+        </div>
+
+        <div class="painting-slot">
+          <div class="photo-label">add painting<br>photos/painting.jpg</div>
+          <div class="photo-caption">title / medium / year</div>
+        </div>
+
+        <div class="painting-slot">
+          <div class="photo-label">add painting<br>photos/painting.jpg</div>
+          <div class="photo-caption">title / medium / year</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TRAVEL -->
+    <div class="misc-section">
+      <div class="misc-section-title">Travel — countries visited</div>
+      <p class="misc-text" style="margin-bottom:1rem;">One favorite photo from each place.</p>
+      <!--
+        HOW TO ADD A COUNTRY:
+        Copy a .travel-card block. Replace the placeholder div inside .travel-img
+        with: <img src="photos/country.jpg" alt="Country">
+        Fill in the country name and a short note.
+        TO REMOVE: delete the .travel-card block.
+      -->
+      <div class="travel-grid">
+
+        <div class="travel-card">
+          <div class="travel-img">
+            <!-- <img src="photos/india.jpg" alt="India"> -->
+            <div class="placeholder-text">add photo<br>photos/india.jpg</div>
+          </div>
+          <div class="travel-info">
+            <div class="travel-country">India</div>
+            <div class="travel-note">home</div>
+          </div>
+        </div>
+
+        <div class="travel-card">
+          <div class="travel-img">
+            <!-- <img src="photos/sweden.jpg" alt="Sweden"> -->
+            <div class="placeholder-text">add photo<br>photos/sweden.jpg</div>
+          </div>
+          <div class="travel-info">
+            <div class="travel-country">Sweden</div>
+            <div class="travel-note">Västerås, Erasmus+</div>
+          </div>
+        </div>
+
+        <div class="travel-card">
+          <div class="travel-img">
+            <!-- <img src="photos/usa.jpg" alt="USA"> -->
+            <div class="placeholder-text">add photo<br>photos/usa.jpg</div>
+          </div>
+          <div class="travel-info">
+            <div class="travel-country">USA</div>
+            <div class="travel-note">Pittsburgh → Philadelphia</div>
+          </div>
+        </div>
+
+        <!-- Add more countries here by copying a .travel-card block above -->
+
+      </div>
+    </div>
+
   </section>
 
 </main>
