@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smrithi Lokesh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f5f0;
+      --ink: #1a1a18;
+      --muted: #6b6860;
+      --accent: #c85a2e;
+      --line: #d9d5cc;
+      --card: #eeece7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 3.5rem 0 2rem;
+      border-bottom: 1px solid var(--line);
+      max-width: 760px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    header .tagline {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      margin-top: 1.4rem;
+      align-items: center;
+    }
+
+    .header-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 300;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .header-links a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .header-links .sep {
+      color: var(--line);
+      font-size: 0.8rem;
+    }
+
+    /* ── NAV TABS ── */
+    nav {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 1rem 1.2rem 0.9rem;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    nav button:hover { color: var(--ink); }
+    nav button.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.8rem 2rem 6rem;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── HOME ── */
+    .home-intro {
+      max-width: 620px;
+    }
+
+    .home-intro p {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.4rem;
+    }
+
+    .home-intro p:last-child { margin-bottom: 0; }
+
+    /* ── SECTION UTILS ── */
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.8rem;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.2rem 2rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .edu-item:first-of-type { border-top: 1px solid var(--line); }
+
+    .edu-degree {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .edu-school {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+      grid-column: 1;
+    }
+
+    .edu-detail {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      grid-column: 1;
+    }
+
+    .edu-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: right;
+      align-self: start;
+      padding-top: 0.2rem;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-item {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .exp-item:first-of-type { border-top: 1px solid var(--line); }
+
+    .exp-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.2rem 2rem;
+      margin-bottom: 0.8rem;
+      align-items: start;
+    }
+
+    .exp-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .exp-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 4px;
+    }
+
+    .exp-title-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .exp-role {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .exp-org {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .exp-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .exp-bullets li {
+      padding-left: 1.2rem;
+      position: relative;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--line);
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pub-item:first-of-type { border-top: 1px solid var(--line); }
+
+    .pub-title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .pub-authors {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 0.3rem;
+    }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .pub-meta a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .pub-meta a:hover { border-bottom-color: var(--accent); }
+
+    .pub-badge {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 0.1rem 0.4rem;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      gap: 1px;
+      border: 1px solid var(--line);
+    }
+
+    .project-card {
+      background: var(--bg);
+      padding: 1.4rem 1.6rem;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+
+    .project-card:last-child { border-bottom: none; }
+    .project-card:hover { background: var(--card); }
+
+    .project-name {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-context {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .project-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--line);
+      margin-top: 0.6rem;
+    }
+
+    /* ── SKILLS ── */
+    .skills-block {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0.4rem 2rem;
+      align-items: start;
+    }
+
+    .skills-block:first-of-type { border-top: 1px solid var(--line); }
+
+    .skills-category {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding-top: 0.1rem;
+    }
+
+    .skills-list {
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    .skills-interests {
+      margin-top: 2.4rem;
+    }
+
+    .skills-interests h3 {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 0.25rem 0.7rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── VOLUNTEERING ── */
+    .vol-item {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.2rem 2rem;
+    }
+
+    .vol-item:first-of-type { border-top: 1px solid var(--line); }
+
+    .vol-role {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .vol-org {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .vol-desc {
+      grid-column: 1;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+      line-height: 1.6;
+    }
+
+    .vol-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: right;
+      align-self: start;
+    }
+
+    /* ── AWARDS (within edu or standalone) ── */
+    .awards-list {
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .awards-list li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+    }
+
+    .awards-list li::before {
+      content: '✦';
+      color: var(--accent);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 560px) {
+      header h1 { font-size: 1.9rem; }
+      nav button { padding: 0.9rem 0.8rem; font-size: 0.65rem; }
+      .edu-item, .exp-header { grid-template-columns: 1fr; }
+      .edu-date, .exp-date { text-align: left; }
+      .skills-block { grid-template-columns: 1fr; }
+      .skills-category { margin-bottom: 0.2rem; }
+      .vol-item { grid-template-columns: 1fr; }
+      .vol-date { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Smrithi Lokesh</h1>
+  <p class="tagline">MSE Robotics · University of Pennsylvania · Philadelphia, PA</p>
+  <div class="header-links">
+    <a href="/cdn-cgi/l/email-protection#7f26302a2d203a323e36333f1a071e120f131a511c1012">Email</a>
+    <span class="sep">·</span>
+    <a href="https://scholar.google.com/YOUR_PROFILE" target="_blank">Google Scholar</a>
+    <span class="sep">·</span>
+    <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">LinkedIn</a>
+    <span class="sep">·</span>
+    <a href="/cv.pdf" target="_blank">CV ↓</a>
+    <span class="sep">·</span>
+    <a href="https://pinterest.com/YOUR_PROFILE" target="_blank">Pinterest (diary)</a>
+  </div>
+</header>
+
+<nav id="main-nav">
+  <button class="active" onclick="switchTab('home', this)">Home</button>
+  <button onclick="switchTab('education', this)">Education</button>
+  <button onclick="switchTab('experience', this)">Experience</button>
+  <button onclick="switchTab('publications', this)">Publications</button>
+  <button onclick="switchTab('projects', this)">Projects</button>
+  <button onclick="switchTab('skills', this)">Skills</button>
+  <button onclick="switchTab('volunteering', this)">Volunteering</button>
+</nav>
+
+<main>
+
+  <!-- ── HOME ── -->
+  <section class="tab-panel active" id="tab-home">
+    <p class="section-label">Hello</p>
+    <div class="home-intro">
+      <p>I'm a robotics engineer and researcher currently pursuing my Master's at the University of Pennsylvania. I work at the intersection of motion planning, manipulation, and multi-agent systems — building robots that can reason about space, construct things, and move with intention.</p>
+      <p>Before Penn, I spent time at CMU's Biorobotics Lab thinking about collective construction in zero gravity, at IISc exploring how soft robots transmit force, and at DRDO characterizing materials for rocket motor casings. In between, I co-captained a team that built a radio-controlled aircraft and flew it to a top-26 international finish.</p>
+      <p>I care about making robotics research more accessible — I've taught Scratch to K–8 kids, designed aircraft design courses for freshmen, and maintained open repositories for mechanical engineering students.</p>
+      <p>Outside research, I keep a Pinterest as a digital diary, and I'm always looking for the next interesting problem.</p>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section class="tab-panel" id="tab-education">
+    <p class="section-label">Education</p>
+
+    <div class="edu-item">
+      <div class="edu-degree">MSE Robotics</div>
+      <div class="edu-date">Expected Dec 2027</div>
+      <div class="edu-school">University of Pennsylvania</div>
+      <div class="edu-detail">Ongoing: CIS 5200 Machine Learning · CIS 5800 Machine Perception · MEAM 6200 Advanced Robotics</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">B.E. (Hons.) Mechanical Engineering</div>
+      <div class="edu-date">July 2025</div>
+      <div class="edu-school">Birla Institute of Technology and Science, Pilani</div>
+      <div class="edu-detail">Minor in Robotics & Automation · CGPA 9.14 / 10.00</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Karnataka Pre-University Board</div>
+      <div class="edu-date">May 2021</div>
+      <div class="edu-school">Kumarans Pre-University College</div>
+      <div class="edu-detail">100%</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">ICSE (Class X)</div>
+      <div class="edu-date">March 2019</div>
+      <div class="edu-school">Clarence Public School</div>
+      <div class="edu-detail">98.6%</div>
+    </div>
+
+    <br />
+    <p class="section-label">Awards & Scholarships</p>
+    <ul class="awards-list">
+      <li>Overall Excellence Award — International Rover Challenge 2023</li>
+      <li>26 / 107 International Rank — AIAA Design, Build and Fly 2024</li>
+      <li>Erasmus+ ICM Scholarship — European Union</li>
+      <li>Partial Travel Grant — International Programs & Collaborations Division, BITS Pilani</li>
+    </ul>
+  </section>
+
+  <!-- ── EXPERIENCE ── -->
+  <section class="tab-panel" id="tab-experience">
+    <p class="section-label">Experience</p>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title-block">
+          <!-- Replace src with actual logo URL -->
+          <div class="exp-logo" title="Open Science Stack">OSS</div>
+          <div>
+            <div class="exp-role">Robotics Engineer</div>
+            <div class="exp-org">Open Science Stack — Bengaluru, India</div>
+          </div>
+        </div>
+        <div class="exp-date">Aug – Dec 2025</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Developed and deployed an autonomy stack for Franka and xArm robots, integrating perception, planning, and manipulation for a dark pharma lab–equivalent setup.</li>
+        <li>Migrated the robotics stack from ROS to ROS 2 and implemented GPU-accelerated motion planning using cuMotion with MoveIt2.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title-block">
+          <div class="exp-logo" title="Mälardalens University">MDU</div>
+          <div>
+            <div class="exp-role">Exchange Student</div>
+            <div class="exp-org">Mälardalens University — Västerås, Sweden</div>
+          </div>
+        </div>
+        <div class="exp-date">Jan – Jun 2025</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Erasmus+ ICM Scholar; advanced coursework in planning, perception, and autonomous systems.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title-block">
+          <div class="exp-logo" title="Carnegie Mellon University">CMU</div>
+          <div>
+            <div class="exp-role">Research Intern</div>
+            <div class="exp-org">Carnegie Mellon University — Pittsburgh, USA</div>
+          </div>
+        </div>
+        <div class="exp-date">Jul 2024 – Jan 2025</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Biorobotics Lab (Prof. Howie Choset) — multi-agent collective construction in zero-gravity environments.</li>
+        <li>Built a hierarchical search-based planner balancing computational cost and solution quality for robotic space construction.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title-block">
+          <div class="exp-logo" title="IISc × Cornell">IISc</div>
+          <div>
+            <div class="exp-role">Research Intern</div>
+            <div class="exp-org">Indian Institute of Science × Cornell University — Bangalore, India</div>
+          </div>
+        </div>
+        <div class="exp-date">May – Jul 2024</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Ruina Lab (Prof. Andy Ruina) — soft robot stiffness; designed and fabricated fiber-reinforced, pneumatically actuated soft bodies.</li>
+        <li>Built experimental setup to analyze force transmission under varying pressure, volume, and cable tensioning.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title-block">
+          <div class="exp-logo" title="DRDO">DRDO</div>
+          <div>
+            <div class="exp-role">Research Intern</div>
+            <div class="exp-org">Defence Research and Development Organisation — Hyderabad, India</div>
+          </div>
+        </div>
+        <div class="exp-date">May – Jul 2023</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Advanced Systems Laboratory — experimental characterization of carbon-epoxy composites for rocket motor casings; Weibull reliability analysis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── PUBLICATIONS ── -->
+  <section class="tab-panel" id="tab-publications">
+    <p class="section-label">Publications</p>
+
+    <div class="pub-item">
+      <div class="pub-title">Hierarchical Planning for the Cuboid Multi-Agent Collective Construction (Cuboid-MACC) Problem</div>
+      <div class="pub-authors">Junil Min, Shambhavi Singh, Geordan Gutow, Smrithi Lokesh Seramalanna, Bhaskar Vundurthy, Jinwoo Choi, Howie Choset</div>
+      <div class="pub-meta">
+        <span class="pub-badge">Submitted · IROS 2026</span>
+        <span>Mar 2026</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Kinematic Models for Cable-driven Continuum Robots with Multiple Segments and Varying Cable Offsets</div>
+      <div class="pub-authors">Ashish Bhalkikar, Smrithi Lokesh, Ashwin K P</div>
+      <div class="pub-meta">
+        <span class="pub-badge">Mechanism and Machine Theory</span>
+        <span>Sept 2024</span>
+        <a href="https://doi.org/10.1016/j.mechmachtheory.2024.105701" target="_blank">doi →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="tab-panel" id="tab-projects">
+    <p class="section-label">Projects</p>
+    <!--
+      TO ADD A PROJECT: copy one .project-card block below and fill in the fields.
+      TO REMOVE A PROJECT: delete its .project-card block.
+    -->
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-context">Kumar Lab · University of Pennsylvania</div>
+        <div class="project-name">Quad-LCD Trajectory Planning</div>
+        <div class="project-desc">Co-developing a data-driven trajectory planning framework for underactuated quadrotors, decomposing global nonlinear optimal control into distinct planning and feedback layers. Building simulation and evaluation pipelines in RotorPy for Crazyflie 2.0 and Dragonfly platforms.</div>
+        <div class="project-date">Feb 2026 – Present</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-context">BITS Pilani · Team Kratos</div>
+        <div class="project-name">Mars Rover — 5DOF Robotic Arm</div>
+        <div class="project-desc">Mechanical design and manufacture of a 5DOF robotic arm for the University Rover Challenge. Designed and fabricated a cycloidal gearbox to replace linear actuators; integrated an underactuated gripper.</div>
+        <div class="project-date">Sep 2022 – May 2024</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-context">Forest Department of Goa</div>
+        <div class="project-name">Drone Mapping of Mangrove Swamps</div>
+        <div class="project-desc">Generated a high-resolution map of Goan mangrove ecosystems in collaboration with the State Forest Department; developed a handheld app for species identification.</div>
+        <div class="project-date">Aug 2023 – May 2024</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-context">AIAA Design, Build and Fly 2024</div>
+        <div class="project-name">Aircraft Design & Analysis</div>
+        <div class="project-desc">Designed and built a micro-class fixed-wing aircraft for Urban Air Mobility missions. Conducted constraint analysis, control surface sizing, flow analysis, and full fabrication.</div>
+        <div class="project-date">Sep 2022 – Apr 2024</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-context">BITS Pilani · Teaching Learning Centre</div>
+        <div class="project-name">Software for Machine Component Design</div>
+        <div class="project-desc">Open repository complementing Shigley's Mechanical Engineering Design — a resource hub for students and practitioners covering the design process with code.</div>
+        <div class="project-date">Jan – May 2024</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="tab-panel" id="tab-skills">
+    <p class="section-label">Technical Skills</p>
+
+    <div class="skills-block">
+      <div class="skills-category">Languages</div>
+      <div class="skills-list">Python, C++, Java</div>
+    </div>
+
+    <div class="skills-block">
+      <div class="skills-category">Robotics & Simulation</div>
+      <div class="skills-list">ROS 2, NVIDIA Isaac Sim, MoveIt2, cuMotion, RotorPy</div>
+    </div>
+
+    <div class="skills-block">
+      <div class="skills-category">CAD & Analysis</div>
+      <div class="skills-list">SolidWorks, Fusion 360, AutoCAD, XFLR5, MATLAB, Simulink</div>
+    </div>
+
+    <div class="skills-block">
+      <div class="skills-category">Fabrication</div>
+      <div class="skills-list">3D Printing, Laser Cutting, CNC, Plasma Cutting, Metal Lathe, Milling, TIG/MIG Welding</div>
+    </div>
+
+    <div class="skills-block">
+      <div class="skills-category">Hardware</div>
+      <div class="skills-list">Arduino, Raspberry Pi, laboratory skills</div>
+    </div>
+
+    <div class="skills-interests">
+      <h3>Research Interests</h3>
+      <div class="interest-tags">
+        <span class="tag">Multi-agent Systems</span>
+        <span class="tag">Motion Planning</span>
+        <span class="tag">Continuum Robots</span>
+        <span class="tag">Kinematics</span>
+        <span class="tag">Autonomous Systems</span>
+        <span class="tag">Soft Robotics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VOLUNTEERING ── -->
+  <section class="tab-panel" id="tab-volunteering">
+    <p class="section-label">Volunteering & Teaching</p>
+
+    <div class="vol-item">
+      <div>
+        <div class="vol-role">Scratch Instructor — Fife-Penn STEM & CS Academy</div>
+        <div class="vol-org">St. Francis Xavier School, Philadelphia</div>
+        <div class="vol-desc">Teaching foundational programming to K–8 students in an after-school environment.</div>
+      </div>
+      <div class="vol-date">Jan 2026 – Present</div>
+    </div>
+
+    <div class="vol-item">
+      <div>
+        <div class="vol-role">Captain — Team Pegasus, Aerodynamics Club</div>
+        <div class="vol-org">BITS Pilani</div>
+        <div class="vol-desc">Led a 20-member team for AIAA DBF 2024; improved university rank from 86 → 26 out of 107 teams globally.</div>
+      </div>
+      <div class="vol-date">Apr 2023 – Jul 2024</div>
+    </div>
+
+    <div class="vol-item">
+      <div>
+        <div class="vol-role">Undergraduate Teaching Assistant</div>
+        <div class="vol-org">Mechanics of Solids, BITS Pilani</div>
+        <div class="vol-desc">Supported 180 sophomore students — queries, quizzes, and academic records under Prof. Kiran Dinkar Mali.</div>
+      </div>
+      <div class="vol-date">Aug – Dec 2023</div>
+    </div>
+
+    <div class="vol-item">
+      <div>
+        <div class="vol-role">Student Mentor — Academic Counselling Board</div>
+        <div class="vol-org">BITS Pilani</div>
+        <div class="vol-desc">Mentored four students across disciplines for academic and personal growth.</div>
+      </div>
+      <div class="vol-date">Aug 2023 – May 2024</div>
+    </div>
+
+    <div class="vol-item">
+      <div>
+        <div class="vol-role">Aircraft Design Instructor</div>
+        <div class="vol-org">Centre of Technical Education, BITS Pilani</div>
+        <div class="vol-desc">Short course on UAV performance and design for freshmen, covering XFLR5, MATLAB, and SolidWorks.</div>
+      </div>
+      <div class="vol-date">Nov 2022 – Jan 2023</div>
+    </div>
+
+    <div class="vol-item">
+      <div>
+        <div class="vol-role">Committee Coordinator — Sandbox Innovations Lab</div>
+        <div class="vol-org">BITS Pilani Innovation Center</div>
+        <div class="vol-desc">Validated technical project proposals, managed equipment, inventory, and budgets across multidisciplinary engineering projects.</div>
+      </div>
+      <div class="vol-date">Feb 2023 – May 2024</div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function switchTab(name, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
