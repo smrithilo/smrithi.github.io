@@ -172,45 +172,6 @@
       margin-bottom: 1.8rem;
     }
 
-    /* ── EDUCATION ── */
-    .edu-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 0.2rem 2rem;
-      padding: 1.4rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .edu-item:first-of-type { border-top: 1px solid var(--line); }
-
-    .edu-degree {
-      font-size: 1.05rem;
-      font-weight: 500;
-    }
-
-    .edu-school {
-      font-size: 0.95rem;
-      color: var(--muted);
-      font-weight: 300;
-      grid-column: 1;
-    }
-
-    .edu-detail {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      grid-column: 1;
-    }
-
-    .edu-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-align: right;
-      align-self: start;
-      padding-top: 0.2rem;
-    }
-
     /* ── EXPERIENCE ── */
     .exp-item {
       padding: 1.6rem 0;
@@ -388,62 +349,6 @@
       margin-top: 0.6rem;
     }
 
-    /* ── SKILLS ── */
-    .skills-block {
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 0.4rem 2rem;
-      align-items: start;
-    }
-
-    .skills-block:first-of-type { border-top: 1px solid var(--line); }
-
-    .skills-category {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding-top: 0.1rem;
-    }
-
-    .skills-list {
-      font-size: 0.95rem;
-      color: var(--ink);
-      line-height: 1.65;
-    }
-
-    .skills-interests {
-      margin-top: 2.4rem;
-    }
-
-    .skills-interests h3 {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-    }
-
-    .interest-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      padding: 0.25rem 0.7rem;
-      letter-spacing: 0.03em;
-    }
-
     /* ── VOLUNTEERING ── */
     .vol-item {
       padding: 1.2rem 0;
@@ -482,28 +387,6 @@
       align-self: start;
     }
 
-    /* ── AWARDS (within edu or standalone) ── */
-    .awards-list {
-      list-style: none;
-      border-top: 1px solid var(--line);
-    }
-
-    .awards-list li {
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 0.95rem;
-      display: flex;
-      align-items: baseline;
-      gap: 0.8rem;
-    }
-
-    .awards-list li::before {
-      content: '✦';
-      color: var(--accent);
-      font-size: 0.7rem;
-      flex-shrink: 0;
-    }
-
     /* ── MISC / RANDOM STUFF ── */
     .misc-intro {
       font-size: 1rem;
@@ -535,7 +418,6 @@
       max-width: 580px;
     }
 
-    /* photo grid */
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -557,27 +439,11 @@
       position: relative;
     }
 
-    .photo-slot img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photo-slot .photo-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-align: center;
-      padding: 0 0.5rem;
-    }
+    .photo-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .photo-slot .photo-caption {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       background: rgba(26,26,24,0.65);
       color: #f7f5f0;
       font-family: 'DM Mono', monospace;
@@ -590,7 +456,6 @@
 
     .photo-slot:hover .photo-caption { opacity: 1; }
 
-    /* travel countries */
     .travel-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -612,14 +477,9 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      position: relative;
     }
 
-    .travel-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .travel-img img { width: 100%; height: 100%; object-fit: cover; }
 
     .travel-img .placeholder-text {
       font-family: 'DM Mono', monospace;
@@ -630,23 +490,10 @@
       line-height: 1.4;
     }
 
-    .travel-info {
-      padding: 0.7rem 0.9rem 0.8rem;
-    }
+    .travel-info { padding: 0.7rem 0.9rem 0.8rem; }
+    .travel-country { font-size: 1rem; font-weight: 500; }
+    .travel-note { font-size: 0.85rem; color: var(--muted); font-weight: 300; margin-top: 0.15rem; }
 
-    .travel-country {
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .travel-note {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-weight: 300;
-      margin-top: 0.15rem;
-    }
-
-    /* paintings — portrait aspect */
     .paintings-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -666,11 +513,7 @@
       position: relative;
     }
 
-    .painting-slot img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .painting-slot img { width: 100%; height: 100%; object-fit: cover; }
 
     .painting-slot .photo-label {
       font-family: 'DM Mono', monospace;
@@ -694,14 +537,11 @@
 
     .painting-slot:hover .photo-caption { opacity: 1; }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 560px) {
       header h1 { font-size: 1.9rem; }
       nav button { padding: 0.9rem 0.8rem; font-size: 0.65rem; }
-      .edu-item, .exp-header { grid-template-columns: 1fr; }
-      .edu-date, .exp-date { text-align: left; }
-      .skills-block { grid-template-columns: 1fr; }
-      .skills-category { margin-bottom: 0.2rem; }
+      .exp-header { grid-template-columns: 1fr; }
+      .exp-date { text-align: left; }
       .vol-item { grid-template-columns: 1fr; }
       .vol-date { text-align: left; }
     }
@@ -720,62 +560,29 @@
     <a href="https://www.linkedin.com/in/smrithi-lokesh-0894b7219/" target="_blank">LinkedIn</a>
     <span class="sep">·</span>
     <a href="/cv.pdf" target="_blank">CV ↓</a>
-    <span class="sep">·</span>
-    <a href="https://pinterest.com/smrithilokesh/" target="_blank">Pinterest (digital diary)</a>
   </div>
 </header>
 
 <nav id="main-nav">
   <button class="active" onclick="switchTab('home', this)">Home</button>
-  <button onclick="switchTab('education', this)">Education</button>
   <button onclick="switchTab('experience', this)">Experience</button>
   <button onclick="switchTab('publications', this)">Publications</button>
-  <button onclick="switchTab('projects', this)">Projects</button>
-  <button onclick="switchTab('skills', this)">Skills</button>
   <button onclick="switchTab('volunteering', this)">Volunteering</button>
-  <button onclick="switchTab('misc', this)">& more</button>
+  <button onclick="switchTab('projects', this)">Projects</button>
+  <button onclick="switchTab('misc', this)">&amp; more</button>
 </nav>
 
 <main>
 
   <!-- ── HOME ── -->
   <section class="tab-panel active" id="tab-home">
-  <p class="section-label">Hello</p>
-  <img src="me.png" alt="Smrithi Lokesh" style="width:140px;height:140px;object-fit:cover;border-radius:50%;margin-bottom:1.8rem;display:block;border:1px solid var(--line);">
-  <div class="home-intro">    <p class="section-label">Hello</p>
+    <p class="section-label">Hello</p>
+    <img src="me.png" alt="Smrithi Lokesh" style="width:140px;height:140px;object-fit:cover;border-radius:50%;margin-bottom:1.8rem;display:block;border:1px solid var(--line);">
     <div class="home-intro">
       <p>I'm Smrithi and I'm pursuing my Master's in Robotics at the University of Pennsylvania. I'm trying to figure out my niche but I'm broadly working in multi-agent coordination and learning! </p>
-      <p>Before Penn, I did my bachelor's in Mechanical Engineering, with a minor in Robotics and Automation at BITS Pilani, India. I spent my senior year doing my bachelor's thesis at CMU's Robotics Institute under Prof Howie Choset and a semester-abroad at Mälardalens University, Sweden. </p>    
+      <p>Before Penn, I did my bachelor's in Mechanical Engineering, with a minor in Robotics and Automation at BITS Pilani, India. I spent my senior year doing my bachelor's thesis at CMU's Robotics Institute under Prof Howie Choset and a semester-abroad at Mälardalens University, Sweden. </p>
       <p>Outside research, I love taking photos on analog and digital cameras, paint, fly RC planes, and travel when I can — <button class="inline-link" onclick="switchTab('misc', document.querySelector('nav button:last-child'))">some of that lives here →</button></p>
     </div>
-  </section>
-
-  <!-- ── EDUCATION ── -->
-  <section class="tab-panel" id="tab-education">
-    <p class="section-label">Education</p>
-
-    <div class="edu-item">
-      <div class="edu-degree">MSE Robotics</div>
-      <div class="edu-date">(Expected) Dec 2027</div>
-      <div class="edu-school">University of Pennsylvania</div>
-      <div class="edu-detail">Ongoing: CIS 5200 Machine Learning · CIS 5800 Machine Perception · MEAM 6200 Advanced Robotics</div>
-    </div>
-
-    <div class="edu-item">
-      <div class="edu-degree">B.E. (Hons.) Mechanical Engineering</div>
-      <div class="edu-date">July 2025</div>
-      <div class="edu-school">Birla Institute of Technology and Science, Pilani</div>
-      <div class="edu-detail">Minor in Robotics & Automation · CGPA 9.14 / 10.00</div>
-    </div>
-
-    <br />
-    <p class="section-label">Awards & Scholarships</p>
-    <ul class="awards-list">
-      <li>Overall Excellence Award — International Rover Challenge 2023</li>
-      <li>26 / 107 International Rank — AIAA Design, Build and Fly 2024</li>
-      <li>Erasmus+ ICM Scholarship — European Union</li>
-      <li>Partial Travel Grant — International Programs & Collaborations Division, BITS Pilani</li>
-    </ul>
   </section>
 
   <!-- ── EXPERIENCE ── -->
@@ -785,7 +592,6 @@
     <div class="exp-item">
       <div class="exp-header">
         <div class="exp-title-block">
-          <!-- Replace src with actual logo URL -->
           <div class="exp-logo" title="Open Science Stack">OSS</div>
           <div>
             <div class="exp-role">Robotics Engineer</div>
@@ -891,85 +697,6 @@
     </div>
   </section>
 
-  <!-- ── PROJECTS ── -->
-  <section class="tab-panel" id="tab-projects">
-    <p class="section-label">Projects</p>
-    <!--
-      TO ADD A PROJECT: copy one .project-card block below and fill in the fields.
-      TO REMOVE A PROJECT: delete its .project-card block.
-    -->
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-context">Kumar Lab · University of Pennsylvania</div>
-        <div class="project-name">Distributed Language Agents for Multi-Robot Task Allocation</div>
-        <div class="project-desc">Exploring on-device LLMs as decentralized controllers for robot teams — each robot runs a lightweight language model that interprets natural language tasks, negotiates with neighbors, and handles coordination and resource competition without a central controller.</div>
-        <div class="project-date">April 2026 - Present</div>
-      </div>
-      
-      <!-- <div class="project-card">
-        <div class="project-context">MEAM 6200 · Advanced Robotics</div>
-        <div class="project-name">Distributed Language Agents for Multi-Robot Task Allocation</div>
-        <div class="project-desc">Exploring on-device LLMs as decentralized controllers for robot teams — each robot runs a lightweight language model that interprets natural language tasks, negotiates with neighbors, and handles coordination and resource competition without a central controller.</div>
-        <div class="project-date">April 2026 - Present</div>
-      </div> -->
-      
-      <div class="project-card">
-        <div class="project-context">BITS Pilani · Team Kratos</div>
-        <div class="project-name">Mars Rover — 5DOF Robotic Arm</div>
-        <div class="project-desc">Mechanical design and manufacture of a 5DOF robotic arm for the University Rover Challenge. Designed and fabricated a cycloidal gearbox to replace linear actuators; integrated an underactuated gripper.</div>
-        <div class="project-date">Sep 2022 - May 2024</div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-context">Forest Department of Goa</div>
-        <div class="project-name">Drone Mapping of Mangrove Swamps</div>
-        <div class="project-desc">Generated a high-resolution map of Goan mangrove ecosystems in collaboration with the State Forest Department; developed a handheld app for species identification.</div>
-        <div class="project-date">Aug 2023 - May 2024</div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-context">AIAA Design, Build and Fly 2024</div>
-        <div class="project-name">Aircraft Design & Analysis</div>
-        <div class="project-desc">Designed and built a micro-class fixed-wing aircraft for Urban Air Mobility missions. Conducted constraint analysis, control surface sizing, flow analysis, and full fabrication.</div>
-        <div class="project-date">Sep 2022 - Apr 2024</div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-context">BITS Pilani · Teaching Learning Centre</div>
-        <div class="project-name">Software for Machine Component Design</div>
-        <div class="project-desc">Open repository complementing Shigley's Mechanical Engineering Design — a resource hub for students and practitioners covering the design process with code.</div>
-        <div class="project-date">Jan 2024 - May 2024</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── SKILLS ── -->
-  <section class="tab-panel" id="tab-skills">
-    <p class="section-label">Technical Skills</p>
-
-    <div class="skills-block">
-      <div class="skills-category">Languages</div>
-      <div class="skills-list">Python, C++, Java</div>
-    </div>
-
-    <div class="skills-block">
-      <div class="skills-category">Robotics & Simulation</div>
-      <div class="skills-list">ROS 2, NVIDIA Isaac Sim, MoveIt2, cuMotion, RotorPy</div>
-    </div>
-
-    <div class="skills-block">
-      <div class="skills-category">CAD & Analysis</div>
-      <div class="skills-list">SolidWorks, Fusion 360, AutoCAD, XFLR5, MATLAB, Simulink</div>
-    </div>
-
-    <div class="skills-block">
-      <div class="skills-category">Fabrication</div>
-      <div class="skills-list">3D Printing, Laser Cutting, CNC, Plasma Cutting, Metal Lathe, Milling, TIG/MIG Welding</div>
-    </div>
-  </section>
-
   <!-- ── VOLUNTEERING ── -->
   <section class="tab-panel" id="tab-volunteering">
     <p class="section-label">Volunteering & Teaching</p>
@@ -982,7 +709,7 @@
       </div>
       <div class="vol-date">July 2026 (Upcoming)</div>
     </div>
-    
+
     <div class="vol-item">
       <div>
         <div class="vol-role">MEAM Lab Assistant - AddLab</div>
@@ -991,7 +718,7 @@
       </div>
       <div class="vol-date">May - August 2026 (Upcoming)</div>
     </div>
-    
+
     <div class="vol-item">
       <div>
         <div class="vol-role">Scratch Instructor - Fife-Penn STEM & CS Academy</div>
@@ -1012,7 +739,7 @@
 
     <div class="vol-item">
       <div>
-        <div class="vol-role"> Teaching Assistant - Mechanics of Solids</div>
+        <div class="vol-role">Teaching Assistant - Mechanics of Solids</div>
         <div class="vol-org">BITS Pilani, India</div>
         <div class="vol-desc">Supported 180 sophomore students — queries, quizzes, and academic records under Prof. Kiran Dinkar Mali.</div>
       </div>
@@ -1047,137 +774,130 @@
     </div>
   </section>
 
+  <!-- ── PROJECTS ── -->
+  <section class="tab-panel" id="tab-projects">
+    <p class="section-label">Projects</p>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-context">Kumar Lab · University of Pennsylvania</div>
+        <div class="project-name">Distributed Language Agents for Multi-Robot Task Allocation</div>
+        <div class="project-desc">Exploring on-device LLMs as decentralized controllers for robot teams — each robot runs a lightweight language model that interprets natural language tasks, negotiates with neighbors, and handles coordination and resource competition without a central controller.</div>
+        <div class="project-date">April 2026 - Present</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-context">BITS Pilani · Team Kratos</div>
+        <div class="project-name">Mars Rover — 5DOF Robotic Arm</div>
+        <div class="project-desc">Mechanical design and manufacture of a 5DOF robotic arm for the University Rover Challenge. Designed and fabricated a cycloidal gearbox to replace linear actuators; integrated an underactuated gripper.</div>
+        <div class="project-date">Sep 2022 - May 2024</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-context">Forest Department of Goa</div>
+        <div class="project-name">Drone Mapping of Mangrove Swamps</div>
+        <div class="project-desc">Generated a high-resolution map of Goan mangrove ecosystems in collaboration with the State Forest Department; developed a handheld app for species identification.</div>
+        <div class="project-date">Aug 2023 - May 2024</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-context">AIAA Design, Build and Fly 2024</div>
+        <div class="project-name">Aircraft Design & Analysis</div>
+        <div class="project-desc">Designed and built a micro-class fixed-wing aircraft for Urban Air Mobility missions. Conducted constraint analysis, control surface sizing, flow analysis, and full fabrication.</div>
+        <div class="project-date">Sep 2022 - Apr 2024</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-context">BITS Pilani · Teaching Learning Centre</div>
+        <div class="project-name">Software for Machine Component Design</div>
+        <div class="project-desc">Open repository complementing Shigley's Mechanical Engineering Design — a resource hub for students and practitioners covering the design process with code.</div>
+        <div class="project-date">Jan 2024 - May 2024</div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ── MISC ── -->
   <section class="tab-panel" id="tab-misc">
     <p class="section-label">& more</p>
     <p class="misc-intro">random stuff i do that makes me happy</p>
 
-    <!-- PHOTOGRAPHY -->
     <div class="misc-section">
       <div class="misc-section-title">Photography</div>
       <p class="misc-text">I like taking photos - analog (kodak gold 800/fujifilm 200/ilford delta 400) & sometimes digital.</p>
-      <!--
-        HOW TO ADD A PHOTO:
-        1. Upload your image to the repo (e.g. photos/film-001.jpg)
-        2. Replace the placeholder div with: <img src="photos/film-001.jpg" alt="description">
-        3. Update the .photo-caption text
-        To add more: copy a .photo-slot block.
-        To remove: delete a .photo-slot block.
-      -->
       <div class="photo-grid">
-
         <div class="photo-slot">
-          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img1.jpg</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img1.jpg</div>
           <div class="photo-caption">caption here</div>
         </div>
-
         <div class="photo-slot">
-          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img2.jpg</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img2.jpg</div>
           <div class="photo-caption">caption here</div>
         </div>
-
         <div class="photo-slot">
-          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img3.jpg</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img3.jpg</div>
           <div class="photo-caption">caption here</div>
         </div>
-
         <div class="photo-slot">
-          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img4.jpg</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img4.jpg</div>
           <div class="photo-caption">caption here</div>
         </div>
-
         <div class="photo-slot">
-          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img4.jpg</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img5.jpg</div>
           <div class="photo-caption">caption here</div>
         </div>
-
         <div class="photo-slot">
-          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img4.jpg</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/img6.jpg</div>
           <div class="photo-caption">caption here</div>
         </div>
-        
       </div>
     </div>
 
-    <!-- RC PLANES -->
     <div class="misc-section">
       <div class="misc-section-title">RC Planes</div>
-      <p class="misc-text">
-        I've been building RC planes since high-school and it's what got me to do engineering.
-        <!-- Edit this text to say whatever you want about your RC flying. -->
-      </p>
-      <!--
-        Optionally add photos the same way as the photography section above.
-      -->
+      <p class="misc-text">I've been building RC planes since high-school and it's what got me to do engineering.</p>
       <div class="photo-grid" style="margin-top:1rem;">
-
         <div class="photo-slot">
-          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/rc1.jpg</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/rc1.jpg</div>
           <div class="photo-caption">caption here</div>
         </div>
-
         <div class="photo-slot">
-          <div class="placeholder-text" style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/rc2.jpg</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;padding:0.5rem;">add photo<br>photos/rc2.jpg</div>
           <div class="photo-caption">caption here</div>
         </div>
-
       </div>
     </div>
 
-    <!-- PAINTINGS -->
     <div class="misc-section">
       <div class="misc-section-title">Paintings</div>
-      <p class="misc-text">
-        <!-- Write a line or two about your painting practice — medium, when you started, what you like to paint. -->
-        Mostly acrylic on canvas/acrylic on plaster/charcoal on paper/graphite on paper.
-      </p>
-      <!--
-        HOW TO ADD A PAINTING:
-        Same as photos — upload to repo, replace placeholder with <img src="...">, update caption.
-      -->
+      <p class="misc-text">Mostly acrylic on canvas/acrylic on plaster/charcoal on paper/graphite on paper.</p>
       <div class="paintings-grid">
-
         <div class="painting-slot">
           <div class="photo-label">add painting<br>photos/painting1.jpg</div>
           <div class="photo-caption">title / medium / year</div>
         </div>
-
         <div class="painting-slot">
           <div class="photo-label">add painting<br>photos/painting2.jpg</div>
           <div class="photo-caption">title / medium / year</div>
         </div>
-
         <div class="painting-slot">
           <div class="photo-label">add painting<br>photos/painting3.jpg</div>
           <div class="photo-caption">title / medium / year</div>
         </div>
-
         <div class="painting-slot">
           <div class="photo-label">add painting<br>photos/painting4.jpg</div>
           <div class="photo-caption">title / medium / year</div>
         </div>
-
       </div>
     </div>
 
-    <!-- TRAVEL -->
     <div class="misc-section">
       <div class="misc-section-title">Travel — countries visited</div>
       <p class="misc-text" style="margin-bottom:1rem;">One favorite photo from each place.</p>
-      <!--
-        HOW TO ADD A COUNTRY:
-        Copy a .travel-card block. Replace the placeholder div inside .travel-img
-        with: <img src="photos/country.jpg" alt="Country">
-        Fill in the country name and a short note.
-        TO REMOVE: delete the .travel-card block.
-      -->
       <div class="travel-grid">
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/india.jpg" alt="India"> -->
-            <div class="placeholder-text">add photo<br>photos/india.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/india.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">India</div>
             <div class="travel-note">States visited: Karnataka, Maharashtra, Goa, Himāchal Pradesh, Punjab, Andaman &amp; Nicobar Islands, Tamil Nāḍu, Andhra Pradesh</div>
@@ -1185,10 +905,7 @@
         </div>
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/malaysia.jpg" alt="Malaysia"> -->
-            <div class="placeholder-text">add photo<br>photos/malaysia.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/malaysia.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">Malaysia</div>
             <div class="travel-note">Cities visited: Kuala Lumpur, Langkawi, Penang</div>
@@ -1196,10 +913,7 @@
         </div>
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/singapore.jpg" alt="Singapore"> -->
-            <div class="placeholder-text">add photo<br>photos/singapore.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/singapore.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">Singapore</div>
             <div class="travel-note"></div>
@@ -1207,10 +921,7 @@
         </div>
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/sweden.jpg" alt="Sweden"> -->
-            <div class="placeholder-text">add photo<br>photos/sweden.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/sweden.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">Sweden</div>
             <div class="travel-note">Cities visited: Västerås, Stockholm, Uppsala</div>
@@ -1218,10 +929,7 @@
         </div>
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/italy.jpg" alt="Italy"> -->
-            <div class="placeholder-text">add photo<br>photos/italy.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/italy.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">Italy</div>
             <div class="travel-note">Cities visited: Roma, Napoli, Pompei, Sorrento, Pisa, Firenze</div>
@@ -1229,10 +937,7 @@
         </div>
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/denmark.jpg" alt="Denmark"> -->
-            <div class="placeholder-text">add photo<br>photos/denmark.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/denmark.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">Denmark</div>
             <div class="travel-note">Cities visited: København</div>
@@ -1240,10 +945,7 @@
         </div>
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/spain.jpg" alt="Spain"> -->
-            <div class="placeholder-text">add photo<br>photos/spain.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/spain.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">Spain</div>
             <div class="travel-note">Cities visited: Barcelona</div>
@@ -1251,10 +953,7 @@
         </div>
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/germany.jpg" alt="Germany"> -->
-            <div class="placeholder-text">add photo<br>photos/germany.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/germany.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">Germany</div>
             <div class="travel-note">Cities visited: Hamburg, Düsseldorf, Dortmund, Köln</div>
@@ -1262,10 +961,7 @@
         </div>
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/norway.jpg" alt="Norway"> -->
-            <div class="placeholder-text">add photo<br>photos/norway.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/norway.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">Norway</div>
             <div class="travel-note">Cities visited: Oslo</div>
@@ -1273,17 +969,12 @@
         </div>
 
         <div class="travel-card">
-          <div class="travel-img">
-            <!-- <img src="photos/usa.jpg" alt="USA"> -->
-            <div class="placeholder-text">add photo<br>photos/usa.jpg</div>
-          </div>
+          <div class="travel-img"><div class="placeholder-text">add photo<br>photos/usa.jpg</div></div>
           <div class="travel-info">
             <div class="travel-country">USA</div>
             <div class="travel-note">States visited: Pennsylvania, Virginia, New York</div>
           </div>
         </div>
-
-        <!-- Add more countries here by copying a .travel-card block above -->
 
       </div>
     </div>
