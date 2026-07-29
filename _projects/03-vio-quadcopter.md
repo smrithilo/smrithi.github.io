@@ -1,13 +1,13 @@
 ---
 title: "Autonomous VIO-Based Quadcopter Navigation"
 order: 3
-year: ""
+year: "2026"
 organization: ""
 institution: "University of Pennsylvania"
 context: "MEAM 6200 Advanced Robotics"
-summary: "Course project on autonomous quadcopter navigation using visual-inertial odometry."
-thumbnail: ""
-thumbnail_alt: "Project image for Autonomous VIO-Based Quadcopter Navigation has not yet been supplied"
+summary: "Integrated voxel-map A* planning, minimum-snap trajectory generation, SE(3) control, and an Error-State Kalman Filter for IMU and stereo-visual fusion into a closed-loop quadcopter autonomy stack."
+thumbnail: "/assets/images/projects/autonomous-quadrotor/thumbnail.webp"
+thumbnail_alt: "Blank placeholder reserved for the autonomous quadrotor project thumbnail"
 topics:
   - "Visual-inertial odometry"
   - "Aerial robotics"
