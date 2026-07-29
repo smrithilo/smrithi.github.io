@@ -1,0 +1,29 @@
+- order: 1
+  role: "Artificial Intelligence Teaching Assistant"
+  organization: "Penn Engineering Summer Academy"
+  dates: "July 2026"
+  summary: "Teaching assistant for Artificial Intelligence under Prof. Rob Ghrist."
+
+- order: 2
+  role: "MEAM Lab Assistant"
+  organization: "Penn AddLab"
+  dates: "May–August 2026"
+  summary: "Supported machine, space, and material-inventory maintenance for the MEAM labs."
+
+- order: 3
+  role: "Scratch Instructor"
+  organization: "Fife-Penn STEM and CS Academy"
+  dates: "January–May 2026"
+  summary: "Taught foundational programming to K–8 students at St. Francis Xavier School."
+
+- order: 4
+  role: "Undergraduate Teaching Assistant, Mechanics of Solids"
+  organization: "BITS Pilani"
+  dates: "August–December 2023"
+  summary: "Supported student questions, quizzes, and academic records."
+
+- order: 5
+  role: "Aircraft Design Instructor"
+  organization: "Centre of Technical Education, BITS Pilani"
+  dates: "November 2022–January 2023"
+  summary: "Taught a short course on UAV performance and design."

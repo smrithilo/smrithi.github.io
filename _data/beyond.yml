@@ -1,0 +1,32 @@
+- title: "Photography"
+  introduction: "Analog and digital photographs, with a preference for everyday movement, place, and light."
+  items:
+    - image: "/assets/images/beyond/photography-italy.webp"
+      alt: "Summer photograph from Italy"
+      caption: "Summer in Italy"
+    - image: "/assets/images/beyond/photography-nyhavn.webp"
+      alt: "Photograph of Nyhavn in Copenhagen"
+      caption: "Nyhavn"
+    - image: "/assets/images/beyond/photography-movement.webp"
+      alt: "Photographic movement study"
+      caption: "Movement"
+
+- title: "RC Aircraft"
+  introduction: "Building and flying RC aircraft is what first drew me toward engineering."
+  items:
+    - image: "/assets/images/beyond/rc-aircraft-crash.webp"
+      alt: "RC aircraft after a crash"
+      caption: "Crash"
+    - image: "/assets/images/beyond/rc-aircraft-workbench.webp"
+      alt: "RC aircraft build station"
+      caption: "Build station"
+
+- title: "Painting"
+  introduction: "Work across acrylic, charcoal, graphite, canvas, paper, and plaster."
+  items:
+    - image: "/assets/images/beyond/painting-wall.webp"
+      alt: "Painting displayed on a wall at home"
+      caption: "Wall at home"
+    - image: "/assets/images/beyond/painting-study.webp"
+      alt: "Replicated painting study"
+      caption: "Study"

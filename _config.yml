@@ -1,0 +1,35 @@
+title: "Smrithi Lokesh"
+description: "Academic and engineering portfolio of Smrithi Lokesh, MSE Robotics student at the University of Pennsylvania."
+url: "https://smrithilo.github.io"
+baseurl: "/smrithi.github.io"
+lang: "en"
+timezone: "America/New_York"
+
+permalink: pretty
+markdown: kramdown
+future: false
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  publications:
+    output: false
+  experiences:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: detail
+
+exclude:
+  - AGENTS.md
+  - application-materials
+  - docs
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

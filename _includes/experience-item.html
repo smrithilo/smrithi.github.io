@@ -1,0 +1,19 @@
+{% assign experience = include.experience %}
+<article class="experience-item">
+  <div class="experience-item__heading">
+    <div>
+      <h3>{{ experience.organization }}</h3>
+      {% if experience.role and experience.role != "" %}<p class="experience-item__role">{{ experience.role }}</p>{% endif %}
+    </div>
+    {% if experience.dates and experience.dates != "" %}<p class="experience-item__date">{{ experience.dates }}</p>{% endif %}
+  </div>
+  {% if experience.location and experience.location != "" %}<p class="experience-item__location">{{ experience.location }}</p>{% endif %}
+  <p>{{ experience.summary }}</p>
+  {% if experience.highlights %}
+    <ul>
+      {% for highlight in experience.highlights %}
+        <li>{{ highlight }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</article>

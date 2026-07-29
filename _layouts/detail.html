@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="project-detail">
+  <a class="back-link" href="{{ '/#projects' | relative_url }}">← Back to projects</a>
+  <header class="detail-header">
+    <p class="eyebrow">Project</p>
+    <h1>{{ page.title }}</h1>
+    {% assign context_parts = "" | split: "" %}
+    {% if page.organization and page.organization != "" %}
+      {% assign context_parts = context_parts | push: page.organization %}
+    {% endif %}
+    {% if page.institution and page.institution != "" %}
+      {% assign context_parts = context_parts | push: page.institution %}
+    {% endif %}
+    {% if page.context and page.context != "" %}
+      {% assign context_parts = context_parts | push: page.context %}
+    {% endif %}
+    <p class="detail-context">{{ context_parts | join: " · " }}</p>
+    <p class="detail-summary">{{ page.summary }}</p>
+  </header>
+
+  {% if page.detail_enabled %}
+    <div class="detail-body prose">
+      {{ content }}
+    </div>
+  {% else %}
+    <div class="detail-disabled" role="note">
+      <p>This project page is not published yet. A concise overview is available on the portfolio homepage.</p>
+    </div>
+  {% endif %}
+</article>
