@@ -35,4 +35,6 @@ education:
     date: "2025"
 
 coursework:
+  - "Machine Learning (CIS 5200)"
+  - "Machine Perception (CIS 5800)"
   - "Advanced Robotics (MEAM 6200)"

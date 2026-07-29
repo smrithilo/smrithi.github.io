@@ -1,7 +1,7 @@
 ---
 title: "Bimanual Manipulation with Diffusion Policies"
 order: 1
-year: ""
+year: "2026–Present"
 organization: "Janus Intelligent Robot Lab"
 institution: "University of Pennsylvania"
 context: ""
