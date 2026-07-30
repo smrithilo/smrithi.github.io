@@ -1,0 +1,61 @@
+{% assign project = include.project %}
+<article class="project-card" id="project-{{ project.slug }}">
+  {% if project.thumbnail and project.thumbnail != "" %}
+    <img
+      class="project-card__image"
+      src="{{ project.thumbnail | relative_url }}"
+      alt="{{ project.thumbnail_alt }}"
+      width="{{ project.thumbnail_width | default: 1200 }}"
+      height="{{ project.thumbnail_height | default: 800 }}"
+      loading="lazy">
+  {% else %}
+    <div
+      class="project-card__image project-card__image--fallback"
+      role="img"
+      aria-label="{{ project.thumbnail_alt | default: 'Project image not yet supplied' }}">
+      <span aria-hidden="true">Image forthcoming</span>
+    </div>
+  {% endif %}
+
+  <div class="project-card__body">
+    {% if project.year and project.year != "" %}<p class="project-card__year">{{ project.year }}</p>{% endif %}
+    <h3 class="project-card__title">
+      {% if project.detail_enabled %}
+        <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+      {% else %}
+        {{ project.title }}
+      {% endif %}
+    </h3>
+
+    <p class="project-card__context">
+      {% if project.organization and project.organization != "" %}{{ project.organization }}{% endif %}
+      {% if project.organization and project.organization != "" and project.institution and project.institution != "" %}<span aria-hidden="true"> · </span>{% endif %}
+      {% if project.institution and project.institution != "" %}{{ project.institution }}{% endif %}
+      {% if project.context and project.context != "" %}<span class="project-card__course">{{ project.context }}</span>{% endif %}
+    </p>
+    <p class="project-card__summary">{{ project.summary }}</p>
+
+    {% if project.topics %}
+      <ul class="topic-list" aria-label="Project topics">
+        {% for topic in project.topics %}
+          <li>{{ topic }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% assign has_project_link = false %}
+    {% if project.links.paper and project.links.paper != "" %}{% assign has_project_link = true %}{% endif %}
+    {% if project.links.code and project.links.code != "" %}{% assign has_project_link = true %}{% endif %}
+    {% if project.links.video and project.links.video != "" %}{% assign has_project_link = true %}{% endif %}
+    {% if project.detail_enabled %}{% assign has_project_link = true %}{% endif %}
+
+    {% if has_project_link %}
+      <div class="project-links" aria-label="{{ project.title }} links">
+        {% if project.links.paper and project.links.paper != "" %}<a href="{{ project.links.paper }}">Paper</a>{% endif %}
+        {% if project.links.code and project.links.code != "" %}<a href="{{ project.links.code }}">Code</a>{% endif %}
+        {% if project.links.video and project.links.video != "" %}<a href="{{ project.links.video }}">Video</a>{% endif %}
+        {% if project.detail_enabled %}<a href="{{ project.url | relative_url }}">View project</a>{% endif %}
+      </div>
+    {% endif %}
+  </div>
+</article>

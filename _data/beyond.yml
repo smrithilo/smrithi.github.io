@@ -1,0 +1,6 @@
+- label: "Photo album"
+  url: "/photo-album/"
+- label: "Travel"
+  url: "/travel/"
+- label: "Art, RC planes, and other random things I do"
+  url: ""

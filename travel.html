@@ -1,0 +1,73 @@
+---
+layout: default
+title: "Travel"
+description: "An evolving map of the countries and places Smrithi Lokesh has explored and called home."
+permalink: "/travel/"
+map: true
+---
+<section class="page-section travel-page" aria-labelledby="travel-title">
+  <a class="travel-back" href="{{ '/#beyond' | relative_url }}">Back to Beyond Robotics</a>
+
+  <header class="travel-header">
+    <p class="eyebrow">Beyond robotics</p>
+    <h1 id="travel-title">Travel</h1>
+    <p>
+      An evolving map of the places that have shaped me&mdash;countries explored, places visited,
+      and places I have called home.
+    </p>
+  </header>
+
+  <div class="travel-map-frame">
+    <div
+      class="travel-map"
+      id="travel-map"
+      role="region"
+      aria-label="Interactive world map of countries and places Smrithi has visited"
+      tabindex="0"></div>
+
+    <div class="travel-map-legend" aria-label="Map legend">
+      <span><i class="travel-legend-country" aria-hidden="true"></i>Visited country</span>
+      <span><i class="travel-legend-city" aria-hidden="true"></i>Visited place</span>
+      <span><i class="travel-legend-home" aria-hidden="true"></i>Lived here</span>
+    </div>
+
+    <p class="travel-map-status" data-travel-status aria-live="polite">Loading map…</p>
+  </div>
+
+  {% assign visited_country_count = site.data.travel.visited_countries | size %}
+  {% assign city_count = site.data.travel.cities | size %}
+  {% if visited_country_count > 0 or city_count > 0 %}
+    <div class="travel-record" aria-labelledby="travel-record-title">
+      <h2 id="travel-record-title">Places on the map</h2>
+
+      {% if visited_country_count > 0 %}
+        <ul class="travel-country-list" aria-label="Visited countries">
+          {% for country in site.data.travel.visited_countries %}
+            <li>{{ country }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if city_count > 0 %}
+        <ul class="travel-city-list" aria-label="Mapped places">
+          {% for city in site.data.travel.cities %}
+            <li>
+              <span>{{ city.name }}{% if city.country and city.country != "" %}, {{ city.country }}{% endif %}</span>
+              <small>
+                {% if city.type == "home" %}
+                  Lived here
+                {% elsif city.kind == "region" %}
+                  Visited region
+                {% else %}
+                  Visited
+                {% endif %}
+              </small>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  {% endif %}
+</section>
+
+<script id="travel-data" type="application/json">{{ site.data.travel | jsonify }}</script>

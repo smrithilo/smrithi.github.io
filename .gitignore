@@ -1,0 +1,16 @@
+# Jekyll output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Bundler
+.bundle/
+vendor/bundle/
+
+# Private application documents, including transcripts
+application-materials/
+
+# Operating system files
+.DS_Store
+Thumbs.db

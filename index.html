@@ -1,990 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smrithi Lokesh</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #f8f9fb;
-      --ink: #0f1923;
-      --muted: #5a6475;
-      --accent: #2f6fad;
-      --line: #dde2ea;
-      --card: #eef1f6;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Outfit', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1.7;
-      font-weight: 300;
-    }
-
-    /* ── HEADER ── */
-    header {
-      padding: 3.5rem 0 2rem;
-      border-bottom: 1px solid var(--line);
-      max-width: 760px;
-      margin: 0 auto;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-
-    header h1 {
-      font-size: 2.2rem;
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-
-    header .tagline {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.78rem;
-      font-weight: 300;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      margin-top: 0.5rem;
-      text-transform: uppercase;
-    }
-
-    .header-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 1.4rem;
-      margin-top: 1.4rem;
-      align-items: center;
-    }
-
-    .header-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.74rem;
-      font-weight: 300;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .header-links a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    .header-links .sep {
-      color: var(--line);
-      font-size: 0.8rem;
-    }
-
-    /* ── NAV TABS ── */
-    nav {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      gap: 0;
-      overflow-x: auto;
-    }
-
-    nav button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 1rem 1.2rem 0.9rem;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-      white-space: nowrap;
-    }
-
-    nav button:hover { color: var(--ink); }
-    nav button.active {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    /* ── MAIN ── */
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2.8rem 2rem 6rem;
-    }
-
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
-    /* ── HOME ── */
-    .home-intro {
-      max-width: 620px;
-    }
-
-    .home-intro p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--ink);
-      margin-bottom: 1.4rem;
-    }
-
-    .home-intro p:last-child { margin-bottom: 0; }
-
-    .inline-link {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'Outfit', system-ui, sans-serif;
-      font-size: inherit;
-      font-weight: 300;
-      color: var(--accent);
-      padding: 0;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: var(--line);
-      transition: text-decoration-color 0.2s;
-    }
-
-    .inline-link:hover {
-      text-decoration-color: var(--accent);
-    }
-
-    /* ── SECTION UTILS ── */
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.8rem;
-    }
-
-    /* ── EXPERIENCE ── */
-    .exp-item {
-      padding: 1.6rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .exp-item:first-of-type { border-top: 1px solid var(--line); }
-
-    .exp-header {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 0.2rem 2rem;
-      margin-bottom: 0.8rem;
-      align-items: start;
-    }
-
-    .exp-logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      background: var(--card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      color: var(--muted);
-      text-align: center;
-      line-height: 1.2;
-      letter-spacing: 0.02em;
-      flex-shrink: 0;
-      overflow: hidden;
-      border: 1px solid var(--line);
-    }
-
-    .exp-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 4px;
-    }
-
-    .exp-title-block {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
-    }
-
-    .exp-role {
-      font-size: 1.05rem;
-      font-weight: 500;
-    }
-
-    .exp-org {
-      font-weight: 300;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .exp-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    .exp-bullets {
-      list-style: none;
-      padding: 0;
-    }
-
-    .exp-bullets li {
-      padding-left: 1.2rem;
-      position: relative;
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .exp-bullets li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--line);
-    }
-
-    /* ── PUBLICATIONS ── */
-    .pub-item {
-      padding: 1.4rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .pub-item:first-of-type { border-top: 1px solid var(--line); }
-
-    .pub-title {
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 0.3rem;
-    }
-
-    .pub-authors {
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-weight: 300;
-      margin-bottom: 0.3rem;
-    }
-
-    .pub-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    .pub-meta a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .pub-meta a:hover { border-bottom-color: var(--accent); }
-
-    .pub-badge {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      padding: 0.1rem 0.4rem;
-    }
-
-    /* ── PROJECTS ── */
-    .projects-grid {
-      display: grid;
-      gap: 1px;
-      border: 1px solid var(--line);
-    }
-
-    .project-card {
-      background: var(--bg);
-      padding: 1.4rem 1.6rem;
-      border-bottom: 1px solid var(--line);
-      transition: background 0.15s;
-    }
-
-    .project-card:last-child { border-bottom: none; }
-    .project-card:hover { background: var(--card); }
-
-    .project-name {
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
-
-    .project-context {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.04em;
-    }
-
-    .project-desc {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .project-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--line);
-      margin-top: 0.6rem;
-    }
-
-    /* ── VOLUNTEERING ── */
-    .vol-item {
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 0.2rem 2rem;
-    }
-
-    .vol-item:first-of-type { border-top: 1px solid var(--line); }
-
-    .vol-role {
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .vol-org {
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-weight: 300;
-    }
-
-    .vol-desc {
-      grid-column: 1;
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 0.3rem;
-      line-height: 1.6;
-    }
-
-    .vol-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--muted);
-      text-align: right;
-      align-self: start;
-    }
-
-    /* ── MISC / RANDOM STUFF ── */
-    .misc-intro {
-      font-size: 1rem;
-      color: var(--muted);
-      font-weight: 300;
-      margin-bottom: 2.4rem;
-      max-width: 520px;
-    }
-
-    .misc-section {
-      margin-bottom: 3.2rem;
-    }
-
-    .misc-section-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .misc-text {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 580px;
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .photo-slot {
-      aspect-ratio: 4/3;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .photo-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    .photo-slot .photo-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(26,26,24,0.65);
-      color: #f7f5f0;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      padding: 0.35rem 0.6rem;
-      letter-spacing: 0.04em;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    .photo-slot:hover .photo-caption { opacity: 1; }
-
-    .travel-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .travel-card {
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      overflow: hidden;
-      background: var(--card);
-    }
-
-    .travel-img {
-      aspect-ratio: 3/2;
-      background: var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .travel-img img { width: 100%; height: 100%; object-fit: cover; }
-
-    .travel-img .placeholder-text {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--muted);
-      text-align: center;
-      padding: 0.5rem;
-      line-height: 1.4;
-    }
-
-    .travel-info { padding: 0.7rem 0.9rem 0.8rem; }
-    .travel-country { font-size: 1rem; font-weight: 500; }
-    .travel-note { font-size: 0.85rem; color: var(--muted); font-weight: 300; margin-top: 0.15rem; }
-
-    .paintings-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .painting-slot {
-      aspect-ratio: 3/4;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .painting-slot img { width: 100%; height: 100%; object-fit: cover; }
-
-    .painting-slot .photo-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--muted);
-      text-align: center;
-      padding: 0 0.5rem;
-    }
-
-    .painting-slot .photo-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(26,26,24,0.65);
-      color: #f7f5f0;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      padding: 0.35rem 0.6rem;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    .painting-slot:hover .photo-caption { opacity: 1; }
-
-    @media (max-width: 560px) {
-      header h1 { font-size: 1.9rem; }
-      nav button { padding: 0.9rem 0.8rem; font-size: 0.65rem; }
-      .exp-header { grid-template-columns: 1fr; }
-      .exp-date { text-align: left; }
-      .vol-item { grid-template-columns: 1fr; }
-      .vol-date { text-align: left; }
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Smrithi Lokesh</h1>
-  <p class="tagline">MSE Robotics · University of Pennsylvania · Philadelphia, PA</p>
-  <div class="header-links">
-    <a href="mailto:smrithi@seas.upenn.edu">Email</a>
-    <span class="sep">·</span>
-    <a href="https://scholar.google.com/citations?user=CO46wakAAAAJ&hl=en" target="_blank">Google Scholar</a>
-    <span class="sep">·</span>
-    <a href="https://www.linkedin.com/in/smrithi-lokesh-0894b7219/" target="_blank">LinkedIn</a>
-    <span class="sep">·</span>
-    <a href="cv.pdf" download target="_blank">CV ↓</a>
+---
+layout: default
+title:
+description: "Smrithi Lokesh is a robotics graduate student working on robot learning, bimanual manipulation, planning, and autonomous systems."
+---
+<section class="page-section about-section" id="about" aria-labelledby="about-title">
+  <h1 class="about-title" id="about-title">About</h1>
+
+  <div class="about-copy prose">
+    <p>
+      I found my way into robotics through student robotics teams, where building real systems showed me how
+      mechanics, software, and autonomy depend on one another. In my junior year,
+      <a href="https://in.linkedin.com/in/ashwin-k-prabhakaran">Prof. Ashwin K. P.</a>
+      [<a href="https://www.xtent-innovations.com/">Xtent Innovations</a>] gave me my first opportunity to
+      turn that curiosity into research, working on kinematic models for multi-segment cable-driven continuum
+      robots with varying cable offsets.
+    </p>
+    <p>
+      I carried that interest into my undergraduate thesis with
+      <a href="https://www.ri.cmu.edu/ri-faculty/howie-choset/">Prof. Howie Choset</a> at Carnegie Mellon’s
+      Biorobotics Lab, shifting towards hierarchical planners for multi-agent collective construction with
+      teams of robots. I then worked at <a href="https://opensciencestack.org/">Open Science Stack</a>,
+      building the autonomy infrastructure that connects perception, planning, and robot hardware.
+    </p>
+    <p>
+      Today, I work with <a href="https://antonilo.github.io/">Prof. Antonio Loquercio</a> at
+      <a href="https://www.grasp.upenn.edu/">GRASP</a>, developing visuomotor behavioral-cloning
+      pipelines and diffusion policies for bimanual manipulation. I am especially interested in long-horizon
+      autonomous systems that can learn from multimodal experience, build useful world models, and stay
+      purposeful across multi-step tasks.
+    </p>
+    <p class="availability">
+      I am seeking part-time robotics, AI, and ML opportunities for Spring 2027 and full-time opportunities
+      for Summer 2027.
+    </p>
   </div>
-</header>
 
-<nav id="main-nav">
-  <button class="active" onclick="switchTab('home', this)">Home</button>
-  <button onclick="switchTab('experience', this)">Experience</button>
-  <button onclick="switchTab('publications', this)">Publications</button>
-  <button onclick="switchTab('volunteering', this)">Volunteering</button>
-  <button onclick="switchTab('projects', this)">Projects</button>
-  <button onclick="switchTab('misc', this)">&amp; more</button>
-</nav>
-
-<main>
-
-  <section class="tab-panel active" id="tab-home">
-    <p class="section-label">Hello</p>
-    <img src="me.png" alt="Smrithi Lokesh" style="width:140px;height:140px;object-fit:cover;border-radius:50%;margin-bottom:1.8rem;display:block;border:1px solid var(--line);">
-    <div class="home-intro">
-      <p>I'm Smrithi and I'm pursuing my Master's in Robotics at the University of Pennsylvania. I'm trying to figure out my niche but I'm broadly working in multi-agent coordination and learning! </p>
-      <p>Before Penn, I did my bachelor's in Mechanical Engineering, with a minor in Robotics and Automation at BITS Pilani, India. I spent my senior year doing my bachelor's thesis at CMU's Robotics Institute under Prof Howie Choset and a semester-abroad at Mälardalens University, Sweden. </p>
-      <p>Outside research, I love taking photos on analog and digital cameras, paint, fly RC planes, and travel when I can — <button class="inline-link" onclick="switchTab('misc', document.querySelector('nav button:last-child'))">some of that lives here →</button></p>
-    </div>
-  </section>
-
-  <section class="tab-panel" id="tab-experience">
-    <p class="section-label">Experience</p>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-title-block">
-          <div class="exp-logo" title="Open Science Stack">OSS</div>
-          <div>
-            <div class="exp-role">Robotics Engineer</div>
-            <div class="exp-org">Open Science Stack — Bengaluru, India</div>
-          </div>
-        </div>
-        <div class="exp-date">Aug 2025 – Dec 2025</div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Developed and deployed an autonomy stack for Franka and xArm robots, integrating perception, planning, and manipulation for an autonomous pharma lab setup.</li>
-        <li>Migrated the robotics stack from ROS to ROS 2 and implemented GPU-accelerated motion planning using cuMotion with MoveIt2.</li>
+  <div class="about-facts">
+    <div>
+      <h2>Education</h2>
+      <ul class="education-list">
+        {% for item in site.data.profile.education %}
+          <li>
+            <strong>{{ item.institution }}</strong>
+            <span>{{ item.degree }}</span>
+            <small>{{ item.date }}</small>
+          </li>
+        {% endfor %}
       </ul>
     </div>
+  </div>
+</section>
 
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-title-block">
-          <div class="exp-logo" title="Mälardalens University">MDU</div>
-          <div>
-            <div class="exp-role">Exchange Student</div>
-            <div class="exp-org">Mälardalens University — Västerås, Sweden</div>
-          </div>
-        </div>
-        <div class="exp-date">Jan 2025 – Jun 2025</div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Erasmus+ ICM Scholar; advanced coursework in planning, perception, and autonomous systems.</li>
-      </ul>
+<section class="page-section" id="projects" aria-labelledby="projects-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Selected work</p>
+      <h2 id="projects-title">Projects</h2>
     </div>
+  </div>
 
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-title-block">
-          <div class="exp-logo" title="Carnegie Mellon University">CMU</div>
-          <div>
-            <div class="exp-role">Research Intern</div>
-            <div class="exp-org">Carnegie Mellon University — Pittsburgh, USA</div>
-          </div>
-        </div>
-        <div class="exp-date">Jul 2024 – Jan 2025</div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Biorobotics Lab (Prof. Howie Choset) — multi-agent collective construction in zero-gravity environments.</li>
-        <li>Built a hierarchical planner for multi-agent collective construction.</li>
-      </ul>
+  <div class="project-grid">
+    {% assign projects = site.projects | sort: "order" %}
+    {% for project in projects %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-section" id="publications" aria-labelledby="publications-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Research record</p>
+      <h2 id="publications-title">Publications</h2>
     </div>
+  </div>
 
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-title-block">
-          <div class="exp-logo" title="IISc × Cornell">IISc</div>
-          <div>
-            <div class="exp-role">Research Intern</div>
-            <div class="exp-org">Indian Institute of Science × Cornell University — Bangalore, India</div>
-          </div>
-        </div>
-        <div class="exp-date">May 2024 – Jul 2024</div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Ruina Lab (Prof. Andy Ruina) — soft robot stiffness; designed and fabricated fiber-reinforced, pneumatically actuated soft bodies.</li>
-        <li>Built experimental setup to analyze force transmission under varying pressure, volume, and cable tensioning.</li>
-      </ul>
+  <div class="publication-list">
+    {% assign publications = site.publications | sort: "order" %}
+    {% for publication in publications %}
+      {% include publication-item.html publication=publication %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-section" id="experience" aria-labelledby="experience-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Research and engineering</p>
+      <h2 id="experience-title">Experience</h2>
     </div>
+  </div>
 
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-title-block">
-          <div class="exp-logo" title="DRDO">DRDO</div>
-          <div>
-            <div class="exp-role">Research Intern</div>
-            <div class="exp-org">Defence Research and Development Organisation — Hyderabad, India</div>
-          </div>
-        </div>
-        <div class="exp-date">May – Jul 2023</div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Advanced Systems Laboratory — experimental characterization of carbon-epoxy composites for rocket motor casings; Weibull reliability analysis.</li>
-      </ul>
+  <div class="experience-list">
+    {% assign experiences = site.experiences | sort: "order" %}
+    {% for experience in experiences %}
+      {% include experience-item.html experience=experience %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-section" id="teaching" aria-labelledby="teaching-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Teaching and mentorship</p>
+      <h2 id="teaching-title">Teaching</h2>
     </div>
-  </section>
+  </div>
 
-  <section class="tab-panel" id="tab-publications">
-    <p class="section-label">Publications</p>
+  <div class="teaching-list">
+    {% assign teaching = site.data.teaching | sort: "order" %}
+    {% for item in teaching %}
+      {% include teaching-item.html item=item %}
+    {% endfor %}
+  </div>
+</section>
 
-    <div class="pub-item">
-      <div class="pub-title">Hierarchical Planning for the Cuboid Multi-Agent Collective Construction (Cuboid-MACC) Problem</div>
-      <div class="pub-authors">Junil Min, Shambhavi Singh, Geordan Gutow, Smrithi Lokesh Seramalanna, Bhaskar Vundurthy, Jinwoo Choi, Howie Choset</div>
-      <div class="pub-meta">
-        <span class="pub-badge">Submitted · IROS 2026</span>
-        <span>Mar 2026</span>
-      </div>
+<section class="page-section beyond-section" id="beyond" aria-labelledby="beyond-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Outside the lab</p>
+      <h2 id="beyond-title">Beyond Robotics</h2>
     </div>
+  </div>
 
-    <div class="pub-item">
-      <div class="pub-title">Kinematic Models for Cable-driven Continuum Robots with Multiple Segments and Varying Cable Offsets</div>
-      <div class="pub-authors">Ashish Bhalkikar, Smrithi Lokesh, Ashwin K P</div>
-      <div class="pub-meta">
-        <span class="pub-badge">Mechanism and Machine Theory</span>
-        <span>Sept 2024</span>
-        <a href="https://doi.org/10.1016/j.mechmachtheory.2024.105701" target="_blank">doi →</a>
-      </div>
-    </div>
-  </section>
+  <ul class="beyond-links" aria-label="Personal portfolios">
+    {% for item in site.data.beyond %}
+      <li>
+        {% if item.url and item.url != "" %}
+          {% if item.url contains '://' %}
+            <a href="{{ item.url }}">{{ item.label }}</a>
+          {% else %}
+            <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+          {% endif %}
+        {% else %}
+          <span>{{ item.label }}</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
 
-  <section class="tab-panel" id="tab-volunteering">
-    <p class="section-label">Volunteering & Teaching</p>
-
-    <div class="vol-item">
-      <div>
-        <div class="vol-role">Teaching Assistant - Engineering Summer Academy at Penn</div>
-        <div class="vol-org">University of Pennsylvania, Philadelphia</div>
-        <div class="vol-desc">Teaching assistant for Artificial Intelligence under Prof. Rob Ghrist.</div>
-      </div>
-      <div class="vol-date">July 2026 (Upcoming)</div>
-    </div>
-
-    <div class="vol-item">
-      <div>
-        <div class="vol-role">MEAM Lab Assistant - AddLab</div>
-        <div class="vol-org">University of Pennsylvania, Philadelphia</div>
-        <div class="vol-desc">Maintenance of machines, spaces and material inventory controlled by the MEAM Labs.</div>
-      </div>
-      <div class="vol-date">May - August 2026 (Upcoming)</div>
-    </div>
-
-    <div class="vol-item">
-      <div>
-        <div class="vol-role">Scratch Instructor - Fife-Penn STEM & CS Academy</div>
-        <div class="vol-org">St. Francis Xavier School, Philadelphia</div>
-        <div class="vol-desc">Teaching foundational programming to K–8 students in an after-school environment.</div>
-      </div>
-      <div class="vol-date">Jan 2026 – May 2026</div>
-    </div>
-
-    <div class="vol-item">
-      <div>
-        <div class="vol-role">Captain — Team Pegasus, Aerodynamics Club</div>
-        <div class="vol-org">BITS Pilani</div>
-        <div class="vol-desc">Led a 20-member team for AIAA DBF 2024; improved university rank from 86 → 26 out of 107 teams globally.</div>
-      </div>
-      <div class="vol-date">Apr 2023 – Jul 2024</div>
-    </div>
-
-    <div class="vol-item">
-      <div>
-        <div class="vol-role">Teaching Assistant - Mechanics of Solids</div>
-        <div class="vol-org">BITS Pilani, India</div>
-        <div class="vol-desc">Supported 180 sophomore students — queries, quizzes, and academic records under Prof. Kiran Dinkar Mali.</div>
-      </div>
-      <div class="vol-date">Aug 2023 – Dec 2023</div>
-    </div>
-
-    <div class="vol-item">
-      <div>
-        <div class="vol-role">Student Mentor — Academic Counselling Board</div>
-        <div class="vol-org">BITS Pilani, India</div>
-        <div class="vol-desc">Mentored four students across disciplines for academic and personal growth.</div>
-      </div>
-      <div class="vol-date">Aug 2023 – May 2024</div>
-    </div>
-
-    <div class="vol-item">
-      <div>
-        <div class="vol-role">Aircraft Design Instructor - Centre of Technical Education</div>
-        <div class="vol-org">BITS Pilani, India</div>
-        <div class="vol-desc">Short course on UAV performance and design for freshmen, covering XFLR5, MATLAB, and SolidWorks.</div>
-      </div>
-      <div class="vol-date">Nov 2022 – Jan 2023</div>
-    </div>
-
-    <div class="vol-item">
-      <div>
-        <div class="vol-role">Committee Coordinator - Sandbox Innovations Lab</div>
-        <div class="vol-org">BITS Pilani Innovation Center</div>
-        <div class="vol-desc">Validated technical project proposals, managed equipment, inventory, and budgets across multidisciplinary engineering projects.</div>
-      </div>
-      <div class="vol-date">Feb 2023 – May 2024</div>
-    </div>
-  </section>
-
-  <section class="tab-panel" id="tab-projects">
-    <p class="section-label">Projects</p>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-context">Kumar Lab · University of Pennsylvania</div>
-        <div class="project-name">Distributed Language Agents for Multi-Robot Task Allocation</div>
-        <div class="project-desc">Exploring on-device LLMs as decentralized controllers for robot teams — each robot runs a lightweight language model that interprets natural language tasks, negotiates with neighbors, and handles coordination and resource competition without a central controller.</div>
-        <div class="project-date">April 2026 - Present</div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-context">BITS Pilani · Team Kratos</div>
-        <div class="project-name">Mars Rover — 5DOF Robotic Arm</div>
-        <div class="project-desc">Mechanical design and manufacture of a 5DOF robotic arm for the University Rover Challenge. Designed and fabricated a cycloidal gearbox to replace linear actuators; integrated an underactuated gripper.</div>
-        <div class="project-date">Sep 2022 - May 2024</div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-context">Forest Department of Goa</div>
-        <div class="project-name">Drone Mapping of Mangrove Swamps</div>
-        <div class="project-desc">Generated a high-resolution map of Goan mangrove ecosystems in collaboration with the State Forest Department; developed a handheld app for species identification.</div>
-        <div class="project-date">Aug 2023 - May 2024</div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-context">AIAA Design, Build and Fly 2024</div>
-        <div class="project-name">Aircraft Design & Analysis</div>
-        <div class="project-desc">Designed and built a micro-class fixed-wing aircraft for Urban Air Mobility missions. Conducted constraint analysis, control surface sizing, flow analysis, and full fabrication.</div>
-        <div class="project-date">Sep 2022 - Apr 2024</div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-context">BITS Pilani · Teaching Learning Centre</div>
-        <div class="project-name">Software for Machine Component Design</div>
-        <div class="project-desc">Open repository complementing Shigley's Mechanical Engineering Design — a resource hub for students and practitioners covering the design process with code.</div>
-        <div class="project-date">Jan 2024 - May 2024</div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="tab-panel" id="tab-misc">
-    <p class="section-label">& more</p>
-    <p class="misc-intro">random stuff i do that makes me happy (in progress)</p>
-
-    <div class="misc-section">
-      <div class="misc-section-title">Photography</div>
-      <p class="misc-text">I like taking photos - analog (kodak gold 800/fujifilm 200/ilford delta 400) & sometimes digital.</p>
-      <div class="photo-grid">
-        <div class="photo-slot">
-          <img src="img1.png" alt="Photography 1">
-          <div class="photo-caption">summer in italy</div>
-        </div>
-        <div class="photo-slot">
-          <!-- <img src="img2.jpg" alt="Photography 2"> -->
-          <div class="photo-caption">tbd</div>
-        </div>
-        <div class="photo-slot">
-          <!-- <img src="img3.jpg" alt="Photography 3"> -->
-          <div class="photo-caption">tbd</div>
-        </div>
-        <div class="photo-slot">
-          <img src="img4.jpg" alt="Photography 4">
-          <div class="photo-caption">nyhavn</div>
-        </div>
-        <div class="photo-slot">
-          <img src="img5.jpg" alt="Photography 5">
-          <div class="photo-caption">movement</div>
-        </div>
-        <div class="photo-slot">
-          <img src="img6.jpg" alt="Photography 6">
-          <div class="photo-caption">walk</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="misc-section">
-      <div class="misc-section-title">RC Planes</div>
-      <p class="misc-text">I've been building RC planes since high-school and it's what got me to do engineering.</p>
-      <div class="photo-grid" style="margin-top:1rem;">
-        <div class="photo-slot">
-          <img src="rc1.jpg" alt="RC plane 1">
-          <div class="photo-caption">crash</div>
-        </div>
-        <div class="photo-slot">
-          <img src="rc2.jpg" alt="RC plane 2">
-          <div class="photo-caption">buildstation</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="misc-section">
-      <div class="misc-section-title">Paintings</div>
-      <p class="misc-text">Mostly acrylic on canvas/acrylic on plaster/charcoal on paper/graphite on paper.</p>
-      <div class="paintings-grid">
-        <div class="painting-slot">
-          <img src="painting1.jpg" alt="Painting 1">
-          <div class="photo-caption">wall at home</div>
-        </div>
-        <div class="painting-slot">
-          <!-- <img src="painting2.jpg" alt="Painting 2"> -->
-          <div class="photo-caption">tbd</div>
-        </div>
-        <div class="painting-slot">
-          <img src="painting3.jpg" alt="Painting 3">
-          <div class="photo-caption">replicate</div>
-        </div>
-        <div class="painting-slot">
-          <!-- <img src="painting4.jpg" alt="Painting 4"> -->
-          <div class="photo-caption">tbd</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="misc-section">
-      <div class="misc-section-title">Travel — countries visited</div>
-      <p class="misc-text" style="margin-bottom:1rem;">One favorite photo from each place.</p>
-      <div class="travel-grid">
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="india.jpg" alt="India"></div>
-          <div class="travel-info">
-            <div class="travel-country">India</div>
-            <div class="travel-note">States visited: Karnataka, Maharashtra, Goa, Himāchal Pradesh, Punjab, Andaman &amp; Nicobar Islands, Tamil Nāḍu, Andhra Pradesh</div>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="malaysia.jpg" alt="Malaysia"></div>
-          <div class="travel-info">
-            <div class="travel-country">Malaysia</div>
-            <div class="travel-note">Cities visited: Kuala Lumpur, Langkawi, Penang</div>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="singapore.jpg" alt="Singapore"></div>
-          <div class="travel-info">
-            <div class="travel-country">Singapore</div>
-            <div class="travel-note"></div>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="sweden.jpg" alt="Sweden"></div>
-          <div class="travel-info">
-            <div class="travel-country">Sweden</div>
-            <div class="travel-note">Cities visited: Västerås, Stockholm, Uppsala</div>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="italy.png" alt="Italy"></div>
-          <div class="travel-info">
-            <div class="travel-country">Italy</div>
-            <div class="travel-note">Cities visited: Roma, Napoli, Pompei, Sorrento, Pisa, Firenze</div>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="denmark.jpg" alt="Denmark"></div>
-          <div class="travel-info">
-            <div class="travel-country">Denmark</div>
-            <div class="travel-note">Cities visited: København</div>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="spain.jpg" alt="Spain"></div>
-          <div class="travel-info">
-            <div class="travel-country">Spain</div>
-            <div class="travel-note">Cities visited: Barcelona</div>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="germany.jpg" alt="Germany"></div>
-          <div class="travel-info">
-            <div class="travel-country">Germany</div>
-            <div class="travel-note">Cities visited: Hamburg, Düsseldorf, Dortmund, Köln</div>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="norway.jpg" alt="Norway"></div>
-          <div class="travel-info">
-            <div class="travel-country">Norway</div>
-            <div class="travel-note">Cities visited: Oslo</div>
-          </div>
-        </div>
-
-        <div class="travel-card">
-          <div class="travel-img"><img src="usa.jpg" alt="USA"></div>
-          <div class="travel-info">
-            <div class="travel-country">USA</div>
-            <div class="travel-note">States visited: Pennsylvania, Virginia, New York</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
-</main>
-
-<script>
-  function switchTab(name, btn) {
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + name).classList.add('active');
-    btn.classList.add('active');
-  }
-</script>
-
-</body>
-</html>
+<footer class="site-footer">
+  <p>© {{ site.time | date: "%Y" }} Smrithi Lokesh</p>
+  <a href="#about">Back to top ↑</a>
+</footer>

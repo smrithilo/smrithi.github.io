@@ -1,0 +1,33 @@
+name: "Smrithi Lokesh"
+headline: "MSE Robotics, University of Pennsylvania"
+education_short: "BITS Pilani ’25"
+location: "Philadelphia, PA"
+image: "/assets/images/profile/smrithi-lokesh.webp"
+image_alt: "Portrait of Smrithi Lokesh"
+
+email: "smrithi@engineering.upenn.edu"
+linkedin: "https://www.linkedin.com/in/smrithi-lokesh-0894b7219/"
+scholar: "https://scholar.google.com/citations?user=CO46wakAAAAJ&hl=en"
+cv: "/assets/documents/smrithi-lokesh-cv.pdf"
+
+navigation:
+  - label: "About"
+    url: "/#about"
+  - label: "Projects"
+    url: "/#projects"
+  - label: "Publications"
+    url: "/#publications"
+  - label: "Experience"
+    url: "/#experience"
+  - label: "Teaching"
+    url: "/#teaching"
+  - label: "Beyond Robotics"
+    url: "/#beyond"
+
+education:
+  - institution: "University of Pennsylvania"
+    degree: "MSE in Robotics"
+    date: "Expected December 2027"
+  - institution: "BITS Pilani"
+    degree: "B.E. (Hons.) Mechanical Engineering, Minor in Robotics and Automation"
+    date: "2025"

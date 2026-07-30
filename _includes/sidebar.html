@@ -1,0 +1,46 @@
+{% assign profile = site.data.profile %}
+<aside class="profile-panel" aria-label="Profile and site navigation">
+  <div class="profile-panel__identity">
+    <a class="profile-panel__portrait-link" href="{{ '/#about' | relative_url }}" aria-label="Go to About">
+      <img
+        class="profile-panel__portrait"
+        src="{{ profile.image | relative_url }}"
+        alt="{{ profile.image_alt }}"
+        width="640"
+        height="640">
+    </a>
+    <div>
+      <a class="profile-panel__name" href="{{ '/#about' | relative_url }}">{{ profile.name }}</a>
+      <p class="profile-panel__headline">{{ profile.headline }}</p>
+      <p class="profile-panel__alumni"><span>Alumna</span>{{ profile.education_short }}</p>
+      <p class="profile-panel__location"><span>Based in</span>{{ profile.location }}</p>
+    </div>
+  </div>
+
+  <nav class="section-nav" aria-label="Portfolio sections">
+    <ul>
+      {% for item in profile.navigation %}
+        <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="profile-links" aria-label="Profile links">
+    <a href="mailto:{{ profile.email }}">Email</a>
+    <a href="{{ profile.linkedin }}" rel="me">LinkedIn</a>
+    <a href="{{ profile.scholar }}" rel="me">Google Scholar</a>
+    <a href="{{ profile.cv | relative_url }}">CV</a>
+  </div>
+
+  <div class="appearance-controls" aria-label="Color options">
+    <label>
+      <span>Color</span>
+      <select data-palette-select>
+        <option value="cobalt">Cobalt</option>
+        <option value="forest">Forest</option>
+        <option value="plum">Plum</option>
+      </select>
+    </label>
+  </div>
+
+</aside>
