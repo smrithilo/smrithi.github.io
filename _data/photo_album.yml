@@ -1,0 +1,107 @@
+# Each entry uses the untouched original JPEG.
+# Keep alt text literal and limited to what is visibly present.
+photos:
+  - file: "DSCF6196.jpeg"
+    alt: "Leafy trees framing a lake from a broad stone terrace, with several people seated near the water"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6197.jpeg"
+    alt: "A shaded park lawn and pond framed by large trees, with a building visible in the distance"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6202.jpeg"
+    alt: "A yellow taxi passing brick apartment buildings while a cyclist rides along the street"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6204.jpeg"
+    alt: "An ornate orange-brown corner building above a city intersection"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6255.jpeg"
+    alt: "A red-brick apartment building at a crosswalk with pedestrians on the street"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6291.jpeg"
+    alt: "The Paramount theater entrance with a CityPickle sign above the doors and cars parked outside"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6292.jpeg"
+    alt: "A busy city street lined with tall buildings, storefront signs, cars, and pedestrians"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6304.jpeg"
+    alt: "An upward view of the neon Katz's Deli sign on a brick storefront"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6458.jpeg"
+    alt: "An audience surrounding a circular concert stage in a dark arena"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6483.jpeg"
+    alt: "Silhouetted audience members beneath pink spotlights at a concert"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6597.jpeg"
+    alt: "An arena concert illuminated by fans of red, green, and blue light"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6638.jpeg"
+    alt: "A distant circular concert stage beneath vertical white spotlights in a dark arena"
+    width: 7728
+    height: 5152
+
+  - file: "DSCF6664.jpeg"
+    alt: "A wide view of a packed arena crowd lit in orange and turquoise"
+    width: 7728
+    height: 5152
+
+  - file: "IMG_4848.JPG"
+    alt: "A sunlit interior space with brick columns and tall windows"
+    width: 2048
+    height: 1536
+
+  - file: "IMG_4923.JPG"
+    alt: "People walking through a brick passage toward sunlit stone arches"
+    width: 2048
+    height: 1536
+
+  - file: "IMG_6039.JPG"
+    alt: "Black-and-white photograph of two people seated in a gallery facing large abstract canvases"
+    width: 3089
+    height: 2048
+
+  - file: "IMG_6040.JPG"
+    alt: "Black-and-white photograph of a wooded path with two people walking in the distance"
+    width: 3089
+    height: 2048
+
+  - file: "IMG_6041.JPG"
+    alt: "Black-and-white photograph of two people playing basketball on an outdoor court surrounded by trees"
+    width: 3089
+    height: 2048
+
+  - file: "IMG_6042.JPG"
+    alt: "Black-and-white photograph of people outside a food stand beneath a Casey's Fish and Chips sign"
+    width: 3089
+    height: 2048
+
+  - file: "IMG_6043.JPG"
+    alt: "Black-and-white canal scene with a moored white boat and a row of gabled buildings"
+    width: 3089
+    height: 2048
+
+  - file: "IMG_6044.JPG"
+    alt: "Black-and-white photograph of blurred pedestrians passing a wall covered in posters"
+    width: 3089
+    height: 2048

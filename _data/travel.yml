@@ -1,0 +1,54 @@
+# Add countries or territories here to highlight them on the map.
+# City and region markers use decimal latitude and longitude.
+# Set type to "home" for a place lived in or "visited" for a regular pin.
+visited_countries:
+  - "Singapore"
+  - "Malaysia"
+  - "India"
+  - "Sweden"
+  - "Norway"
+  - "Denmark"
+  - "Germany"
+  - "Italy"
+  - "Spain"
+  - "United States"
+  - "Puerto Rico"
+
+cities:
+  - { name: "Singapore", country: "Singapore", latitude: 1.3521, longitude: 103.8198, type: "visited", kind: "city" }
+  - { name: "Penang", country: "Malaysia", latitude: 5.4141, longitude: 100.3288, type: "visited", kind: "region" }
+  - { name: "Kuala Lumpur", country: "Malaysia", latitude: 3.1390, longitude: 101.6869, type: "visited", kind: "city" }
+  - { name: "Langkawi", country: "Malaysia", latitude: 6.3500, longitude: 99.8000, type: "visited", kind: "region" }
+  - { name: "Andaman and Nicobar Islands", country: "India", latitude: 11.7401, longitude: 92.6586, type: "visited", kind: "region" }
+  - { name: "Bengaluru", country: "India", latitude: 12.9716, longitude: 77.5946, type: "home", kind: "city" }
+  - { name: "Mumbai", country: "India", latitude: 19.0760, longitude: 72.8777, type: "visited", kind: "city" }
+  - { name: "Pune", country: "India", latitude: 18.5204, longitude: 73.8567, type: "visited", kind: "city" }
+  - { name: "Odisha", country: "India", latitude: 20.9517, longitude: 85.0985, type: "visited", kind: "region" }
+  - { name: "Chennai", country: "India", latitude: 13.0827, longitude: 80.2707, type: "visited", kind: "city" }
+  - { name: "Puducherry", country: "India", latitude: 11.9416, longitude: 79.8083, type: "visited", kind: "city" }
+  - { name: "Goa", country: "India", latitude: 15.2993, longitude: 74.1240, type: "home", kind: "region" }
+  - { name: "Hyderabad", country: "India", latitude: 17.3850, longitude: 78.4867, type: "visited", kind: "city" }
+  - { name: "Himachal Pradesh", country: "India", latitude: 31.1048, longitude: 77.1734, type: "visited", kind: "region" }
+  - { name: "Punjab", country: "India", latitude: 31.1471, longitude: 75.3412, type: "visited", kind: "region" }
+  - { name: "Västerås", country: "Sweden", latitude: 59.6099, longitude: 16.5448, type: "home", kind: "city" }
+  - { name: "Uppsala", country: "Sweden", latitude: 59.8586, longitude: 17.6389, type: "visited", kind: "city" }
+  - { name: "Stockholm", country: "Sweden", latitude: 59.3293, longitude: 18.0686, type: "visited", kind: "city" }
+  - { name: "Oslo", country: "Norway", latitude: 59.9139, longitude: 10.7522, type: "visited", kind: "city" }
+  - { name: "Copenhagen", country: "Denmark", latitude: 55.6761, longitude: 12.5683, type: "visited", kind: "city" }
+  - { name: "Cologne", country: "Germany", latitude: 50.9375, longitude: 6.9603, type: "visited", kind: "city" }
+  - { name: "Dortmund", country: "Germany", latitude: 51.5136, longitude: 7.4653, type: "visited", kind: "city" }
+  - { name: "Düsseldorf", country: "Germany", latitude: 51.2277, longitude: 6.7735, type: "visited", kind: "city" }
+  - { name: "Hamburg", country: "Germany", latitude: 53.5511, longitude: 9.9937, type: "visited", kind: "city" }
+  - { name: "Pisa", country: "Italy", latitude: 43.7228, longitude: 10.4017, type: "visited", kind: "city" }
+  - { name: "Florence", country: "Italy", latitude: 43.7696, longitude: 11.2558, type: "visited", kind: "city" }
+  - { name: "Rome", country: "Italy", latitude: 41.9028, longitude: 12.4964, type: "visited", kind: "city" }
+  - { name: "Naples", country: "Italy", latitude: 40.8518, longitude: 14.2681, type: "visited", kind: "city" }
+  - { name: "Sorrento", country: "Italy", latitude: 40.6263, longitude: 14.3758, type: "visited", kind: "city" }
+  - { name: "Pompeii", country: "Italy", latitude: 40.7462, longitude: 14.4989, type: "visited", kind: "city" }
+  - { name: "Barcelona", country: "Spain", latitude: 41.3874, longitude: 2.1686, type: "visited", kind: "city" }
+  - { name: "Washington, DC", country: "United States", latitude: 38.9072, longitude: -77.0369, type: "visited", kind: "city" }
+  - { name: "Pittsburgh", country: "United States", latitude: 40.4406, longitude: -79.9959, type: "home", kind: "city" }
+  - { name: "Philadelphia", country: "United States", latitude: 39.9526, longitude: -75.1652, type: "home", kind: "city" }
+  - { name: "New York City", country: "United States", latitude: 40.7128, longitude: -74.0060, type: "visited", kind: "city" }
+  - { name: "Puerto Rico", country: "United States", latitude: 18.2208, longitude: -66.5901, type: "visited", kind: "region" }
+  - { name: "Virginia", country: "United States", latitude: 37.4316, longitude: -78.6569, type: "visited", kind: "region" }

@@ -1,6 +1,7 @@
 ---
 order: 2
 organization: "Open Science Stack"
+organization_url: "https://opensciencestack.org/"
 role: "Robotics Engineer"
 location: "Bengaluru, India"
 dates: "August–December 2025"

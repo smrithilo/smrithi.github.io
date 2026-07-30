@@ -2,7 +2,13 @@
 <article class="teaching-item">
   <div>
     <h3>{{ item.role }}</h3>
-    <p>{{ item.organization }}</p>
+    <p>
+      {% if item.organization_url and item.organization_url != "" %}
+        <a href="{{ item.organization_url }}">{{ item.organization }}</a>
+      {% else %}
+        {{ item.organization }}
+      {% endif %}
+    </p>
   </div>
   <p class="teaching-item__date">{{ item.dates }}</p>
   {% if item.summary and item.summary != "" %}<p class="teaching-item__summary">{{ item.summary }}</p>{% endif %}

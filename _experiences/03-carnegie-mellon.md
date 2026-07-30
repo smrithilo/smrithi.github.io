@@ -1,6 +1,7 @@
 ---
-order: 3
+order: 4
 organization: "Carnegie Mellon University"
+organization_url: "https://www.ri.cmu.edu/robotics-groups/biorobotics/"
 role: "Research Intern, Biorobotics Lab"
 location: "Pittsburgh, PA"
 dates: "July 2024–January 2025"

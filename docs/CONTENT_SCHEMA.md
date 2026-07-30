@@ -17,6 +17,8 @@ context: "Course or other context"
 summary: "One concise, factual homepage description."
 thumbnail: "/assets/images/projects/example.webp"
 thumbnail_alt: "Descriptive alternative text"
+thumbnail_width: 1200
+thumbnail_height: 800
 topics:
   - "Topic one"
   - "Topic two"
@@ -80,6 +82,7 @@ Create one file in `_experiences/`:
 ---
 order: 6
 organization: "Organization"
+organization_url: ""
 role: "Role"
 location: "City, Country"
 dates: "Month Year–Month Year"
@@ -99,6 +102,7 @@ Edit `_data/teaching.yml`. Each entry supports:
 - order: 1
   role: "Role"
   organization: "Organization"
+  organization_url: ""
   dates: "Date range"
   summary: "Concise factual description."
 ```
@@ -110,6 +114,31 @@ The section is intentionally compact.
 Edit `_data/beyond.yml`. Each group has a title, short introduction, and image list. Place optimized images in `assets/images/beyond/` and retain source-resolution files under `assets/images/beyond/originals/`.
 
 Do not add empty cards, visible “TBD” text, or a country-by-country travel directory.
+
+## Travel map
+
+Edit `_data/travel.yml`. `visited_countries` contains country-name strings. Each `cities` entry contains:
+
+```yaml
+- name: "City name"
+  country: "Country name"
+  latitude: 0.0
+  longitude: 0.0
+  type: "visited"
+  note: ""
+```
+
+Use decimal coordinates and set `type` to either `visited` or `home`. Do not infer travel history from education, employment, or profile locations.
+
+## Photo album
+
+Edit `_data/photo_album.yml`. Every entry contains:
+
+- `file`: the exact original JPEG filename under `assets/images/photo-album/originals/`;
+- `alt`: a literal description of the visible photograph;
+- `width` and `height`: the source image dimensions in pixels.
+
+The album displays original-resolution files without cropping or recompression. Clicking an image opens that same source JPEG. Preserve the dimensions and alt text when reordering entries.
 
 ## Documents and private materials
 

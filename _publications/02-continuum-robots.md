@@ -9,8 +9,8 @@ venue: "Mechanism and Machine Theory"
 year: 2024
 status: "Published"
 links:
-  paper: ""
-  doi: "https://doi.org/10.1016/j.mechmachtheory.2024.105701"
+  paper: "https://doi.org/10.1016/j.mechmachtheory.2024.105701"
+  doi: ""
   code: ""
   video: ""
 related_project: ""

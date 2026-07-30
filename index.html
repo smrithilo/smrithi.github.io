@@ -4,18 +4,30 @@ title:
 description: "Smrithi Lokesh is a robotics graduate student working on robot learning, bimanual manipulation, planning, and autonomous systems."
 ---
 <section class="page-section about-section" id="about" aria-labelledby="about-title">
-  <p class="eyebrow">About</p>
-  <h1 id="about-title">Robotics research grounded in learning, planning, and real systems.</h1>
+  <h1 class="about-title" id="about-title">About</h1>
 
   <div class="about-copy prose">
     <p>
-      I am currently pursuing an MSE in Robotics at the University of Pennsylvania and graduated from
-      BITS Pilani in 2025 with a B.E. (Hons.) in Mechanical Engineering and a minor in Robotics and Automation.
+      I found my way into robotics through student robotics teams, where building real systems showed me how
+      mechanics, software, and autonomy depend on one another. In my junior year,
+      <a href="https://in.linkedin.com/in/ashwin-k-prabhakaran">Prof. Ashwin K. P.</a>
+      [<a href="https://www.xtent-innovations.com/">Xtent Innovations</a>] gave me my first opportunity to
+      turn that curiosity into research, working on kinematic models for multi-segment cable-driven continuum
+      robots with varying cable offsets.
     </p>
     <p>
-      My current work focuses on visuomotor behavioral cloning and diffusion policies for bimanual robotic
-      manipulation. More broadly, I am interested in long-horizon autonomy, multimodal learning, world models,
-      planning–learning interfaces, perception, and autonomous systems.
+      I carried that interest into my undergraduate thesis with
+      <a href="https://www.ri.cmu.edu/ri-faculty/howie-choset/">Prof. Howie Choset</a> at Carnegie Mellon’s
+      Biorobotics Lab, shifting towards hierarchical planners for multi-agent collective construction with
+      teams of robots. I then worked at <a href="https://opensciencestack.org/">Open Science Stack</a>,
+      building the autonomy infrastructure that connects perception, planning, and robot hardware.
+    </p>
+    <p>
+      Today, I work with <a href="https://antonilo.github.io/">Prof. Antonio Loquercio</a> at
+      <a href="https://www.grasp.upenn.edu/">GRASP</a>, developing visuomotor behavioral-cloning
+      pipelines and diffusion policies for bimanual manipulation. I am especially interested in long-horizon
+      autonomous systems that can learn from multimodal experience, build useful world models, and stay
+      purposeful across multi-step tasks.
     </p>
     <p class="availability">
       I am seeking part-time robotics, AI, and ML opportunities for Spring 2027 and full-time opportunities
@@ -36,14 +48,6 @@ description: "Smrithi Lokesh is a robotics graduate student working on robot lea
         {% endfor %}
       </ul>
     </div>
-    <div>
-      <h2>Selected coursework</h2>
-      <ul class="coursework-list">
-        {% for course in site.data.profile.coursework %}
-          <li>{{ course }}</li>
-        {% endfor %}
-      </ul>
-    </div>
   </div>
 </section>
 
@@ -53,7 +57,6 @@ description: "Smrithi Lokesh is a robotics graduate student working on robot lea
       <p class="eyebrow">Selected work</p>
       <h2 id="projects-title">Projects</h2>
     </div>
-    <p>Research and engineering work across manipulation, multi-robot planning, aerial autonomy, and robotics infrastructure.</p>
   </div>
 
   <div class="project-grid">
@@ -118,32 +121,23 @@ description: "Smrithi Lokesh is a robotics graduate student working on robot lea
       <p class="eyebrow">Outside the lab</p>
       <h2 id="beyond-title">Beyond Robotics</h2>
     </div>
-    <p>Photography, RC aircraft, and painting remain a quieter counterpoint to technical work.</p>
   </div>
 
-  <div class="beyond-list">
-    {% for group in site.data.beyond %}
-      <section class="beyond-group" aria-labelledby="beyond-{{ forloop.index }}">
-        <header>
-          <h3 id="beyond-{{ forloop.index }}">{{ group.title }}</h3>
-          <p>{{ group.introduction }}</p>
-        </header>
-        <div class="beyond-gallery">
-          {% for item in group.items %}
-            <figure>
-              <img
-                src="{{ item.image | relative_url }}"
-                alt="{{ item.alt }}"
-                width="1200"
-                height="800"
-                loading="lazy">
-              <figcaption>{{ item.caption }}</figcaption>
-            </figure>
-          {% endfor %}
-        </div>
-      </section>
+  <ul class="beyond-links" aria-label="Personal portfolios">
+    {% for item in site.data.beyond %}
+      <li>
+        {% if item.url and item.url != "" %}
+          {% if item.url contains '://' %}
+            <a href="{{ item.url }}">{{ item.label }}</a>
+          {% else %}
+            <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+          {% endif %}
+        {% else %}
+          <span>{{ item.label }}</span>
+        {% endif %}
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 </section>
 
 <footer class="site-footer">

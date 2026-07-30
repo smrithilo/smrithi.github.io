@@ -1,6 +1,7 @@
 ---
 order: 1
 organization: "Janus Intelligent Robot Lab"
+organization_url: "https://jirl-upenn.github.io/"
 role: "Research Assistant"
 location: "University of Pennsylvania, Philadelphia, PA"
 dates: "May 2026–Present"

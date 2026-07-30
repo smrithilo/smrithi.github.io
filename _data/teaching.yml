@@ -1,29 +1,34 @@
 - order: 1
-  role: "Artificial Intelligence Teaching Assistant"
+  role: "Teaching Assistant: Artificial Intelligence"
   organization: "Penn Engineering Summer Academy"
+  organization_url: "https://esap.engineering.upenn.edu/about/"
   dates: "July 2026"
-  summary: "Teaching assistant for Artificial Intelligence under Prof. Rob Ghrist."
+  summary: "Supported high school students in a college-level Artificial Intelligence course taught by Prof. Rob Ghrist."
 
 - order: 2
   role: "MEAM Lab Assistant"
   organization: "Penn AddLab"
+  organization_url: "https://meamlabs.seas.upenn.edu/"
   dates: "May–August 2026"
-  summary: "Supported machine, space, and material-inventory maintenance for the MEAM labs."
+  summary: "Maintained machines, shared workspaces, and material inventory across Penn's MEAM instructional labs."
 
 - order: 3
-  role: "Scratch Instructor"
+  role: "Coding Instructor"
   organization: "Fife-Penn STEM and CS Academy"
+  organization_url: "https://community.seas.upenn.edu/"
   dates: "January–May 2026"
-  summary: "Taught foundational programming to K–8 students at St. Francis Xavier School."
+  summary: "Introduced K–8 students at St. Francis Xavier School to programming fundamentals through Scratch."
 
 - order: 4
-  role: "Undergraduate Teaching Assistant, Mechanics of Solids"
+  role: "Teaching Assistant: Mechanics of Solids"
   organization: "BITS Pilani"
+  organization_url: "https://www.bits-pilani.ac.in/goa/mechanical-engineering/"
   dates: "August–December 2023"
-  summary: "Supported student questions, quizzes, and academic records."
+  summary: "Supported Mechanics of Solids instruction through student Q&A, quiz administration, and course-record management."
 
 - order: 5
   role: "Aircraft Design Instructor"
   organization: "Centre of Technical Education, BITS Pilani"
+  organization_url: "https://www.bits-pilani.ac.in/goa/center-for-technical-education/"
   dates: "November 2022–January 2023"
-  summary: "Taught a short course on UAV performance and design."
+  summary: "Taught a short course introducing UAV performance analysis and core aircraft-design principles."

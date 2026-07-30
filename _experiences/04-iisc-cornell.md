@@ -1,6 +1,7 @@
 ---
-order: 4
+order: 5
 organization: "Indian Institute of Science × Cornell University"
+organization_url: "https://cps.iisc.ac.in/"
 role: "Research Intern, Ruina Lab"
 location: "Bengaluru, India"
 dates: "May–July 2024"

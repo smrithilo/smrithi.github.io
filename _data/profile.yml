@@ -5,12 +5,10 @@ location: "Philadelphia, PA"
 image: "/assets/images/profile/smrithi-lokesh.webp"
 image_alt: "Portrait of Smrithi Lokesh"
 
-email: "smrithi@seas.upenn.edu"
-github: "https://github.com/smrithilo"
+email: "smrithi@engineering.upenn.edu"
 linkedin: "https://www.linkedin.com/in/smrithi-lokesh-0894b7219/"
 scholar: "https://scholar.google.com/citations?user=CO46wakAAAAJ&hl=en"
-resume: "/assets/documents/smrithi-lokesh-resume.pdf"
-academic_cv: "/assets/documents/smrithi-lokesh-cv.pdf"
+cv: "/assets/documents/smrithi-lokesh-cv.pdf"
 
 navigation:
   - label: "About"
@@ -33,8 +31,3 @@ education:
   - institution: "BITS Pilani"
     degree: "B.E. (Hons.) Mechanical Engineering, Minor in Robotics and Automation"
     date: "2025"
-
-coursework:
-  - "Machine Learning (CIS 5200)"
-  - "Machine Perception (CIS 5800)"
-  - "Advanced Robotics (MEAM 6200)"

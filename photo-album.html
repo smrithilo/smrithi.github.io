@@ -1,0 +1,37 @@
+---
+layout: default
+title: "Photo Album"
+description: "Analog and digital photographs by Smrithi Lokesh."
+permalink: "/photo-album/"
+---
+<section class="page-section photo-album-page" aria-labelledby="photo-album-title">
+  <a class="travel-back" href="{{ '/#beyond' | relative_url }}">Back to Beyond Robotics</a>
+
+  <header class="photo-album-header">
+    <p class="eyebrow">Beyond robotics</p>
+    <h1 id="photo-album-title">Photo Album</h1>
+    <p>
+      All photographs here were made either on film or digitally: analog work was shot
+      with a Canon AF35M, and digital work with a Fujifilm X100VI.
+    </p>
+  </header>
+
+  <div class="photo-album-grid">
+    {% for photo in site.data.photo_album.photos %}
+      {% capture photo_path %}/assets/images/photo-album/originals/{{ photo.file }}{% endcapture %}
+      <figure class="photo-album-item">
+        <a
+          href="{{ photo_path | relative_url }}"
+          aria-label="Open this photograph at full resolution">
+          <img
+            src="{{ photo_path | relative_url }}"
+            alt="{{ photo.alt }}"
+            width="{{ photo.width }}"
+            height="{{ photo.height }}"
+            {% unless forloop.first %}loading="lazy"{% endunless %}
+            decoding="async">
+        </a>
+      </figure>
+    {% endfor %}
+  </div>
+</section>

@@ -7,7 +7,9 @@ institution: "University of Pennsylvania"
 context: "MEAM 6200 Advanced Robotics"
 summary: "Integrated voxel-map A* planning, minimum-snap trajectory generation, SE(3) control, and an Error-State Kalman Filter for IMU and stereo-visual fusion into a closed-loop quadcopter autonomy stack."
 thumbnail: "/assets/images/projects/autonomous-quadrotor/thumbnail.webp"
-thumbnail_alt: "Blank placeholder reserved for the autonomous quadrotor project thumbnail"
+thumbnail_alt: "Three-dimensional maze plot with colored obstacles and dense A-star, planned, and actual flight paths between marked start and goal points"
+thumbnail_width: 1200
+thumbnail_height: 960
 topics:
   - "Visual-inertial odometry"
   - "Aerial robotics"

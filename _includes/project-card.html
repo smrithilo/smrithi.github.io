@@ -5,8 +5,8 @@
       class="project-card__image"
       src="{{ project.thumbnail | relative_url }}"
       alt="{{ project.thumbnail_alt }}"
-      width="1200"
-      height="800"
+      width="{{ project.thumbnail_width | default: 1200 }}"
+      height="{{ project.thumbnail_height | default: 800 }}"
       loading="lazy">
   {% else %}
     <div
