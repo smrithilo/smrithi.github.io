@@ -14,9 +14,9 @@
     {% if experience.dates and experience.dates != "" %}<p class="experience-item__date">{{ experience.dates }}</p>{% endif %}
   </div>
   {% if experience.location and experience.location != "" %}<p class="experience-item__location">{{ experience.location }}</p>{% endif %}
-  <p>{{ experience.summary }}</p>
-  {% if experience.highlights %}
+  {% if experience.summary or experience.highlights %}
     <ul>
+      {% if experience.summary and experience.summary != "" %}<li>{{ experience.summary }}</li>{% endif %}
       {% for highlight in experience.highlights %}
         <li>{{ highlight }}</li>
       {% endfor %}
