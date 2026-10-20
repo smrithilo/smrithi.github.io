@@ -23,7 +23,7 @@
         document.documentElement.dataset.palette = ["cobalt", "forest", "plum"].indexOf(savedPalette) !== -1 ? savedPalette : "forest";
       }());
     </script>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     {% if page.map %}
       <link
         rel="stylesheet"
