@@ -1,11 +1,11 @@
 ---
-title: "Learning Scene Constraints from Successful and Failed Manipulation"
+title: "Failure-Conditioned Video-to-Simulation"
 order: 2
 year: "2026–Present"
 organization: "Research with Prof. Jiayuan Mao"
 institution: "University of Pennsylvania"
 context: "Exploratory research"
-summary: "Investigating whether matched successful and failed videos reveal physical constraints that successes alone leave ambiguous. An initial synthetic pushing pilot uses structured scene hypotheses compiled into MuJoCo; held-out action outcomes, contact timing, and trajectories are the next evaluation targets. Failure conditioning has not yet shown a reconstruction improvement."
+summary: "Exploring whether successful and failed manipulation videos reveal physical constraints that help reconstruct simulators for predicting new action outcomes."
 thumbnail: ""
 thumbnail_alt: ""
 topics:

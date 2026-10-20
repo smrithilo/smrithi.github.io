@@ -573,6 +573,7 @@ h3 {
 }
 
 .project-card__body {
+  grid-column: -2 / -1;
   padding-top: 0;
 }
 
