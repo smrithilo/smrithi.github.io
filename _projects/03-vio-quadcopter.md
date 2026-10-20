@@ -1,6 +1,6 @@
 ---
 title: "Autonomous VIO-Based Quadcopter Navigation"
-order: 3
+order: 4
 year: "2026"
 organization: ""
 institution: "University of Pennsylvania"

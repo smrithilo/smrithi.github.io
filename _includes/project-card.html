@@ -8,13 +8,6 @@
       width="{{ project.thumbnail_width | default: 1200 }}"
       height="{{ project.thumbnail_height | default: 800 }}"
       loading="lazy">
-  {% else %}
-    <div
-      class="project-card__image project-card__image--fallback"
-      role="img"
-      aria-label="{{ project.thumbnail_alt | default: 'Project image not yet supplied' }}">
-      <span aria-hidden="true">Image forthcoming</span>
-    </div>
   {% endif %}
 
   <div class="project-card__body">
@@ -44,6 +37,7 @@
     {% endif %}
 
     {% assign has_project_link = false %}
+    {% if project.links.website and project.links.website != "" %}{% assign has_project_link = true %}{% endif %}
     {% if project.links.paper and project.links.paper != "" %}{% assign has_project_link = true %}{% endif %}
     {% if project.links.code and project.links.code != "" %}{% assign has_project_link = true %}{% endif %}
     {% if project.links.video and project.links.video != "" %}{% assign has_project_link = true %}{% endif %}
@@ -51,6 +45,7 @@
 
     {% if has_project_link %}
       <div class="project-links" aria-label="{{ project.title }} links">
+        {% if project.links.website and project.links.website != "" %}<a href="{{ project.links.website }}">Project website</a>{% endif %}
         {% if project.links.paper and project.links.paper != "" %}<a href="{{ project.links.paper }}">Paper</a>{% endif %}
         {% if project.links.code and project.links.code != "" %}<a href="{{ project.links.code }}">Code</a>{% endif %}
         {% if project.links.video and project.links.video != "" %}<a href="{{ project.links.video }}">Video</a>{% endif %}

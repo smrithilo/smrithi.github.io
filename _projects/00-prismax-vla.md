@@ -1,11 +1,11 @@
 ---
-title: "Cross-Embodiment Generalization for Vision-Language-Action Models"
+title: "Adapting Vision–Language–Action Policies"
 order: 0
 year: "Aug 2026–Present"
 organization: "PrismaX Capstone"
 institution: "University of Pennsylvania"
 context: ""
-summary: "Developing a VLA prototype to transfer manipulation capabilities across robotic embodiments with different kinematics and dynamics; building training pipelines with open-source and PrismaX datasets and evaluating cross-embodiment transfer in simulation."
+summary: "Building a training and evaluation pipeline for post-training adaptation of pretrained VLA policies, with cross-embodiment generalization as the broader goal. Current work includes RL-VLA/OpenPI setup and π0.5 baseline deployment and evaluation; reinforcement-learning-based adaptation and comparisons with frozen and supervised baselines are in progress."
 thumbnail: "https://framerusercontent.com/images/UuQnmASL0vYmncbw2rICNoNvRg.svg?height=43&width=180"
 thumbnail_alt: "PrismaX logo"
 topics:

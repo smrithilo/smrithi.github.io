@@ -23,6 +23,7 @@ topics:
   - "Topic one"
   - "Topic two"
 links:
+  website: ""
   paper: ""
   code: ""
   video: ""

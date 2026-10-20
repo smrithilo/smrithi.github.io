@@ -1,6 +1,6 @@
 ---
 title: "Cuboid-MACC"
-order: 2
+order: 3
 year: "2024–2026"
 organization: "Biorobotics Lab"
 institution: "Carnegie Mellon University"
